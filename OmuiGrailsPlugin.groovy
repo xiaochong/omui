@@ -11,8 +11,8 @@ class OmuiGrailsPlugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Omui Plugin" // Headline display name of the plugin
-    def author = "Your name"
+    def title = "Operamasks UI Plugin" // Headline display name of the plugin
+    def author = "groovyquan"
     def authorEmail = ""
     def description = '''\
 Brief summary/description of the plugin.
