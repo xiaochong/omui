@@ -167,4 +167,19 @@ class OmuiTagLib extends BaseTagLib {
         doTag(attrs, body, "combo", "input")
     }
 
+    /**
+     * @attr id
+     *
+     * @attr allowDecimals
+     * @attr allowNegative
+     * @attr decimalPrecision
+     * @attr disabled
+     * @attr readOnly
+     *
+     * @attr onBlur
+     */
+    def numberField = { attrs, body ->
+        doTag(attrs, body, "numberField", "input")
+    }
+
 }

@@ -122,4 +122,16 @@ components {
         containerTag = 'input'
     }
 
+    numberField {
+        attitudes {
+            allowDecimals = 'Boolean'
+            allowNegative = 'Boolean'
+            decimalPrecision = 'Number'
+            disabled = 'Boolean'
+            readOnly = 'Boolean'
+        }
+        events = ['onBlur']
+        containerTag = 'input'
+    }
+
 }
