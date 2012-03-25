@@ -1,9 +1,18 @@
 package org.grails.plugins.omui
 
 import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.serializer.JSONSerializerMap
 import org.grails.plugins.omui.json.JSONContent
+import org.grails.plugins.omui.json.JsDateFormatSerializer
 
 abstract class BaseTagLib {
+
+    private static JSONSerializerMap mapping = new JSONSerializerMap()
+
+    static {
+        mapping.put(Date.class, new JsDateFormatSerializer())
+    }
+
     OmuiComponentService omuiComponentService
 
     protected doTag(Map attrs, Closure body, String compName, String containerTag = 'div') {
@@ -17,14 +26,14 @@ abstract class BaseTagLib {
                 outputAttributes.put(entity.key, entity.value)
             }
             return map
-        })
+        }, mapping)
         def outputAttributeContent = outputAttributes.collect {k, v ->
             "$k=\"${v?.encodeAsHTML()}\""
         }.join(' ')
         out <<
                 """<${containerTag} id="${id}" ${outputAttributeContent}>${body()}</${containerTag}>"""
         r.script {
-            return "jQuery(function(){jQuery('#${id}').om${compName.capitalize()}(${config});});"
+            return "jQuery(function(){jQuery('#${id}').om${compName.capitalize()}(${config});});\n"
         }
     }
 
