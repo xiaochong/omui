@@ -1,6 +1,7 @@
 package org.grails.plugins.omui
 
 class OmuiTagLib extends BaseTagLib {
+
     static namespace = "om"
 
     /**
@@ -29,8 +30,38 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onCloseAll
      * @attr onLoadComplete
      */
-    def tabs = {attrs, body ->
-        doTag(attrs, body, 'tabs')
+    def tabs = { attrs, body ->
+        doTag(attrs, body, "tabs")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr active
+     * @attr autoPlay
+     * @attr border
+     * @attr closable
+     * @attr height
+     * @attr interval
+     * @attr lazyLoad
+     * @attr scrollable
+     * @attr switchMode
+     * @attr tabHeight
+     * @attr tabWidth
+     * @attr width
+     *
+     * @attr onActivate
+     * @attr onAdd
+     * @attr onBeforeActivate
+     * @attr onBeforeAdd
+     * @attr onBeforeClose
+     * @attr onBeforeCloseAll
+     * @attr onClose
+     * @attr onCloseAll
+     * @attr onLoadComplete
+     */
+    def button = { attrs, body ->
+        doTag(attrs, body, "button")
     }
 
     /**
@@ -52,8 +83,8 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBeforeCollapse
      * @attr onCollapse
      */
-    def accordion = {attrs, body ->
-        doTag(attrs, body, 'accordion')
+    def accordion = { attrs, body ->
+        doTag(attrs, body, "accordion")
     }
 
     /**
@@ -77,10 +108,9 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBeforeClose
      * @attr onClose
      * @attr onOpen
-     *
      */
-    def dialog = {attrs, body ->
-        doTag(attrs, body, 'dialog')
+    def dialog = { attrs, body ->
+        doTag(attrs, body, "dialog")
     }
 
     /**
@@ -101,13 +131,14 @@ class OmuiTagLib extends BaseTagLib {
      * @attr startDay
      *
      * @attr onSelect
-     *
      */
-    def calendar = {attrs, body ->
-        doTag(attrs, body, 'calendar', 'input')
+    def calendar = { attrs, body ->
+        doTag(attrs, body, "calendar", "input")
     }
 
     /**
+     * @attr id
+     *
      * @attr autoFilter
      * @attr dataSource
      * @attr disabled
@@ -128,9 +159,12 @@ class OmuiTagLib extends BaseTagLib {
      * @attr valueField
      * @attr width
      *
+     * @attr onError
+     * @attr onSuccess
+     * @attr onValueChange
      */
-    def combo = {attrs, body ->
-        doTag(attrs, body, 'combo', 'input')
+    def combo = { attrs, body ->
+        doTag(attrs, body, "combo", "input")
     }
 
 }
