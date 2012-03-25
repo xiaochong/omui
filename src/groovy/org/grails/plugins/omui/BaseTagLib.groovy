@@ -22,6 +22,8 @@ abstract class BaseTagLib {
             Attitude attitude = omuiComponentService.getAttitude(compName, entity.key)
             if (attitude) {
                 map.put(entity.key, transform(attitude.types, entity.value))
+            } else if (omuiComponentService.hasEvent(compName, entity.key)) {
+                map.put(entity.key, new JSONContent(entity.value?.toString()))
             } else {
                 outputAttributes.put(entity.key, entity.value)
             }
@@ -70,6 +72,11 @@ abstract class BaseTagLib {
                     return true
                 }
                 break
+            case AttitudeType.JSON:
+                if (value && value.trim().startsWith('{')) {
+                    return true
+                }
+                break
         }
         return false
     }
@@ -80,6 +87,9 @@ abstract class BaseTagLib {
                 return Boolean.valueOf(value)
                 break
             case AttitudeType.Function:
+                return new JSONContent(value)
+                break
+            case AttitudeType.JSON:
                 return new JSONContent(value)
                 break
             case AttitudeType.Number:

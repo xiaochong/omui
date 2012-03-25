@@ -266,4 +266,117 @@ class OmuiTagLib extends BaseTagLib {
         doTag(attrs, body, "panel")
     }
 
+    /**
+     * @attr id
+     *
+     * @attr autoFit
+     * @attr colModel
+     * @attr dataSource
+     * @attr emptyMsg
+     * @attr errorMsg
+     * @attr extraData
+     * @attr height
+     * @attr limit
+     * @attr loadingMsg
+     * @attr method
+     * @attr pageStat
+     * @attr pageText
+     * @attr preProcess
+     * @attr rowClasses
+     * @attr showIndex
+     * @attr singleSelect
+     * @attr title
+     * @attr width
+     *
+     * @attr onError
+     * @attr onPageChange
+     * @attr onRefresh
+     * @attr onRowClick
+     * @attr onRowDblClick
+     * @attr onRowDeselect
+     * @attr onRowSelect
+     * @attr onSuccess
+     */
+    def grid = { attrs, body ->
+        doTag(attrs, body, "grid", "table")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr cascadeCheck
+     * @attr dataSource
+     * @attr draggable
+     * @attr showCheckbox
+     * @attr showIcon
+     * @attr simpleDataModel
+     *
+     * @attr onBeforeCollapse
+     * @attr onBeforeExpand
+     * @attr onBeforeLoad
+     * @attr onBeforeSelect
+     * @attr onCheck
+     * @attr onClick
+     * @attr onCollapse
+     * @attr onDblClick
+     * @attr onDrag
+     * @attr onDrop
+     * @attr onError
+     * @attr onExpand
+     * @attr onRightClick
+     * @attr onSelect
+     * @attr onSuccess
+     */
+    def tree = { attrs, body ->
+        doTag(attrs, body, "tree", "ul")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr activeNavCls
+     * @attr animSpeed
+     * @attr autoPlay
+     * @attr controlNav
+     * @attr delay
+     * @attr directionNav
+     * @attr effect
+     * @attr interval
+     * @attr pauseOnHover
+     * @attr startSlide
+     *
+     * @attr onAfterSlide
+     * @attr onBeforeSlide
+     */
+    def slider = { attrs, body ->
+        doTag(attrs, body, "slider")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr contextMenu
+     * @attr dataSource
+     * @attr maxWidth
+     * @attr minWidth
+     *
+     * @attr onSelect
+     */
+    def menu = { attrs, body ->
+        doTag(attrs, body, "menu")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr text
+     * @attr value
+     * @attr width
+     *
+     * @attr onChange
+     */
+    def progressbar = { attrs, body ->
+        doTag(attrs, body, "progressbar")
+    }
+
 }

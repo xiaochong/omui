@@ -191,4 +191,81 @@ components {
                 'onError', 'onExpand', 'onOpen', 'onSuccess']
     }
 
+    grid {
+        attitudes {
+            autoFit = 'Boolean'
+            colModel = 'Array'
+            dataSource = 'String'
+            emptyMsg = 'String'
+            errorMsg = 'String'
+            extraData = 'JSON'
+            height = 'Number'
+            limit = 'Number'
+            loadingMsg = 'String'
+            method = 'String'
+            pageStat = 'String'
+            pageText = 'String'
+            preProcess = 'Function'
+            rowClasses = 'Array,Function'
+            showIndex = 'Boolean'
+            singleSelect = 'Boolean'
+            title = 'String'
+            width = 'Number'
+        }
+        events = ['onError', 'onPageChange', 'onRefresh', 'onRowClick', 'onRowDblClick', 'onRowDeselect',
+                'onRowSelect', 'onSuccess'
+        ]
+        containerTag = 'table'
+    }
+
+    tree {
+        attitudes {
+            cascadeCheck = 'Boolean'
+            dataSource = 'String,Array'
+            draggable = 'Boolean'
+            showCheckbox = 'Boolean'
+            showIcon = 'Boolean'
+            simpleDataModel = 'Boolean'
+        }
+        events = ['onBeforeCollapse', 'onBeforeExpand', 'onBeforeLoad', 'onBeforeSelect', 'onCheck',
+                'onClick', 'onCollapse', 'onDblClick', 'onDrag', 'onDrop', 'onError', 'onExpand', 'onRightClick',
+                'onSelect', 'onSuccess']
+        containerTag = 'ul'
+    }
+
+    slider {
+        attitudes {
+            activeNavCls = ' String'
+            animSpeed = 'String'
+            autoPlay = 'Boolean'
+            controlNav = 'Boolean,String,Selector'
+            delay = 'Number'
+            directionNav = 'Boolean'
+            effect = 'String,Boolean'
+            interval = 'Number'
+            pauseOnHover = 'Boolean'
+            startSlide = 'Number'
+        }
+        events = ['onAfterSlide', 'onBeforeSlide']
+    }
+
+    menu {
+        attitudes {
+            contextMenu = 'Boolean'
+            dataSource = 'String'
+            maxWidth = 'Number'
+            minWidth = 'Number'
+        }
+        events = ['onSelect']
+    }
+
+    progressbar {
+        attitudes {
+            text = 'String,Function'
+            value = 'Number'
+            width = 'Number,String'
+        }
+        events = ['onChange']
+    }
+
 }
