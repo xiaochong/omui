@@ -65,6 +65,11 @@ abstract class BaseTagLib {
                     return true
                 }
                 break
+            case AttitudeType.Array:
+                if (value && value.trim().startsWith('[')) {
+                    return true
+                }
+                break
         }
         return false
     }

@@ -134,4 +134,41 @@ components {
         containerTag = 'input'
     }
 
+    suggestion {
+        attitudes {
+            cacheSize = 'Number'
+            clientFormatter = 'Function'
+            crossDomain = 'Boolean'
+            dataSource = 'URL'
+            delay = 'Number'
+            disabled = 'Boolean'
+            listMaxHeight = 'Number'
+            listWidth = 'Number'
+            method = 'String'
+            minChars = 'Number'
+            preProcess = 'Function'
+            queryName = 'String'
+            readOnly = 'Boolean'
+        }
+        events = ['onBeforeSuggest', 'onError', 'onSelect', 'onSuccess', 'onSuggesting']
+        containerTag = 'input'
+    }
+
+    itemSelector {
+        attitudes {
+            autoSort = 'Boolean'
+            availableTitle = 'String'
+            clientFormatter = 'Function'
+            dataSource = 'Array,URL'
+            height = 'String'
+            preProcess = 'Function'
+            selectedTitle = 'String'
+            toolbarIcons = 'Array'
+            value = 'Array'
+            width = 'String'
+        }
+        events = ['onBeforeItemDeselect', 'onBeforeItemSelect', 'onError', 'onItemDeselect',
+                'onItemSelect', 'onSort', 'onSuccess']
+    }
+
 }

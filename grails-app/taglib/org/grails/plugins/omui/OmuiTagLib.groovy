@@ -182,4 +182,57 @@ class OmuiTagLib extends BaseTagLib {
         doTag(attrs, body, "numberField", "input")
     }
 
+    /**
+     * @attr id
+     *
+     * @attr cacheSize
+     * @attr clientFormatter
+     * @attr crossDomain
+     * @attr dataSource
+     * @attr delay
+     * @attr disabled
+     * @attr listMaxHeight
+     * @attr listWidth
+     * @attr method
+     * @attr minChars
+     * @attr preProcess
+     * @attr queryName
+     * @attr readOnly
+     *
+     * @attr onBeforeSuggest
+     * @attr onError
+     * @attr onSelect
+     * @attr onSuccess
+     * @attr onSuggesting
+     */
+    def suggestion = { attrs, body ->
+        doTag(attrs, body, "suggestion", "input")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr autoSort
+     * @attr availableTitle
+     * @attr clientFormatter
+     * @attr dataSource
+     * @attr height
+     * @attr preProcess
+     * @attr selectedTitle
+     * @attr toolbarIcons
+     * @attr value
+     * @attr width
+     *
+     * @attr onBeforeItemDeselect
+     * @attr onBeforeItemSelect
+     * @attr onError
+     * @attr onItemDeselect
+     * @attr onItemSelect
+     * @attr onSort
+     * @attr onSuccess
+     */
+    def itemSelector = { attrs, body ->
+        doTag(attrs, body, "itemSelector")
+    }
+
 }
