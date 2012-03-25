@@ -21,25 +21,6 @@ components {
                 'onBeforeCloseAll', 'onClose', 'onCloseAll', 'onLoadComplete']
     }
 
-    button {
-        attitudes {
-            active = 'Number,String'
-            autoPlay = 'Boolean'
-            border = 'Boolean'
-            closable = 'Boolean,Array'
-            height = 'Number,String'
-            interval = 'Number'
-            lazyLoad = 'Boolean'
-            scrollable = 'Boolean'
-            switchMode = 'String'
-            tabHeight = 'Number,String'
-            tabWidth = 'Number,String'
-            width = 'Number,String'
-        }
-        events = ['onActivate', 'onAdd', 'onBeforeActivate', 'onBeforeAdd', 'onBeforeClose',
-                'onBeforeCloseAll', 'onClose', 'onCloseAll', 'onLoadComplete']
-    }
-
     accordion {
         attitudes {
             active = "Number,String"
@@ -246,7 +227,7 @@ components {
     tree {
         attitudes {
             cascadeCheck = 'Boolean'
-            dataSource = 'String,Array'
+            dataSource = 'Array,String'
             draggable = 'Boolean'
             showCheckbox = 'Boolean'
             showIcon = 'Boolean'
@@ -291,6 +272,17 @@ components {
             width = 'Number,String'
         }
         events = ['onChange']
+    }
+
+    button {
+        attitudes {
+            disabled = 'String'
+            icons = 'Object'
+            label = 'String'
+            width = 'Number'
+        }
+        events = ['onClick']
+        noGen = true
     }
 
 }

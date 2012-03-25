@@ -39,36 +39,6 @@ class OmuiTagLib extends BaseTagLib {
      *
      * @attr active
      * @attr autoPlay
-     * @attr border
-     * @attr closable
-     * @attr height
-     * @attr interval
-     * @attr lazyLoad
-     * @attr scrollable
-     * @attr switchMode
-     * @attr tabHeight
-     * @attr tabWidth
-     * @attr width
-     *
-     * @attr onActivate
-     * @attr onAdd
-     * @attr onBeforeActivate
-     * @attr onBeforeAdd
-     * @attr onBeforeClose
-     * @attr onBeforeCloseAll
-     * @attr onClose
-     * @attr onCloseAll
-     * @attr onLoadComplete
-     */
-    def button = { attrs, body ->
-        doTag(attrs, body, "button")
-    }
-
-    /**
-     * @attr id
-     *
-     * @attr active
-     * @attr autoPlay
      * @attr collapsible
      * @attr disabled
      * @attr height
@@ -406,5 +376,4 @@ class OmuiTagLib extends BaseTagLib {
     def progressbar = { attrs, body ->
         doTag(attrs, body, "progressbar")
     }
-
 }

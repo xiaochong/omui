@@ -73,6 +73,7 @@ abstract class BaseTagLib {
                 }
                 break
             case AttitudeType.JSON:
+            case AttitudeType.Object:
                 if (value && value.trim().startsWith('{')) {
                     return true
                 }
@@ -90,6 +91,7 @@ abstract class BaseTagLib {
                 return new JSONContent(value)
                 break
             case AttitudeType.JSON:
+            case AttitudeType.Object:
                 return new JSONContent(value)
                 break
             case AttitudeType.Number:

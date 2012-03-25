@@ -13,6 +13,7 @@ class OmuiTagLib extends BaseTagLib {
 out << head
 
 configObject.components.each {name, comp ->
+    if (comp.noGen) return
     out << """
     /**
      * @attr id
