@@ -171,4 +171,24 @@ components {
                 'onItemSelect', 'onSort', 'onSuccess']
     }
 
+    panel {
+        attitudes {
+            closable = 'Boolean'
+            closable = 'Boolean'
+            collapsed = 'Boolean'
+            collapsible = 'Boolean'
+            header = 'Boolean'
+            height = 'Number,String'
+            iconCls = 'String'
+            loadingMessage = 'String'
+            preProcess = 'Function'
+            title = 'String'
+            tools = 'Array,Selector'
+            url = 'String'
+            width = 'Number,String'
+        }
+        events = ['onBeforeClose', 'onBeforeCollapse', 'onBeforeExpand', 'onBeforeOpen', 'onClose', 'onCollapse',
+                'onError', 'onExpand', 'onOpen', 'onSuccess']
+    }
+
 }

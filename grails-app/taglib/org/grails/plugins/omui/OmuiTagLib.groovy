@@ -235,4 +235,35 @@ class OmuiTagLib extends BaseTagLib {
         doTag(attrs, body, "itemSelector")
     }
 
+    /**
+     * @attr id
+     *
+     * @attr closable
+     * @attr collapsed
+     * @attr collapsible
+     * @attr header
+     * @attr height
+     * @attr iconCls
+     * @attr loadingMessage
+     * @attr preProcess
+     * @attr title
+     * @attr tools
+     * @attr url
+     * @attr width
+     *
+     * @attr onBeforeClose
+     * @attr onBeforeCollapse
+     * @attr onBeforeExpand
+     * @attr onBeforeOpen
+     * @attr onClose
+     * @attr onCollapse
+     * @attr onError
+     * @attr onExpand
+     * @attr onOpen
+     * @attr onSuccess
+     */
+    def panel = { attrs, body ->
+        doTag(attrs, body, "panel")
+    }
+
 }
