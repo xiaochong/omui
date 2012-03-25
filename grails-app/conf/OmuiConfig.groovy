@@ -260,7 +260,7 @@ components {
 
     slider {
         attitudes {
-            activeNavCls = ' String'
+            activeNavCls = 'String'
             animSpeed = 'String'
             autoPlay = 'Boolean'
             controlNav = 'Boolean,String,Selector'
