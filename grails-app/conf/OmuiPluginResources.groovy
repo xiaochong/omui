@@ -3,9 +3,9 @@ modules = {
         resource url: [plugin: 'omui', dir: 'js/operamasks-ui/css/default', file: "om-default.css"]
     }
     'operamasks-ui-js' {
-        resource url: [plugin: 'omui', dir: 'js/operamasks-ui/js', file: "operamasks-ui.min.js"], nominify: true, disposition: 'head'
+        resource url: [plugin: 'omui', dir: 'js/operamasks-ui/js', file: "operamasks-ui.min.js"], nominify: true
     }
     'operamasks-ui' {
-        dependsOn 'jquery-dev,operamasks-ui-theme-default,operamasks-ui-js'
+        dependsOn 'jquery,operamasks-ui-theme-default,operamasks-ui-js'
     }
 }
