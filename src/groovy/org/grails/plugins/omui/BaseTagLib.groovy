@@ -1,30 +1,31 @@
 package org.grails.plugins.omui
 
 import com.alibaba.fastjson.JSON
+import org.grails.plugins.omui.json.JSONContent
 
 abstract class BaseTagLib {
     OmuiComponentService omuiComponentService
 
     protected doTag(Map attrs, Closure body, String compName, String containerTag = 'div') {
-        def id = attrs.remove('id')
+        def id = attrs.remove('id') ?: UUID.randomUUID().toString()
+        def outputAttributes = [:]
         def config = JSON.toJSONString(attrs.inject([:]) {Map map, Map.Entry<String, Object> entity ->
             Attitude attitude = omuiComponentService.getAttitude(compName, entity.key)
             if (attitude) {
                 map.put(entity.key, transform(attitude.types, entity.value))
+            } else {
+                outputAttributes.put(entity.key, entity.value)
             }
             return map
         })
+        def outputAttributeContent = outputAttributes.collect {k, v ->
+            "$k=\"${v?.encodeAsHTML()}\""
+        }.join(' ')
         out <<
-                """
-<${containerTag} id="${id}">
-${body()}
-</${containerTag}>
-<script type=\"text/javascript\">
-    \$(function () {
-        \$('#${id}').om${compName.capitalize()}(${config});
-    });
-</script>
-"""
+                """<${containerTag} id="${id}" ${outputAttributeContent}>${body()}</${containerTag}>"""
+        r.script {
+            return "jQuery(function(){jQuery('#${id}').om${compName.capitalize()}(${config});});"
+        }
     }
 
     private Object transform(List<AttitudeType> types, Object value) {
@@ -50,6 +51,11 @@ ${body()}
                     return true
                 }
                 break
+            case AttitudeType.Function:
+                if (value && value.trim().startsWith('function')) {
+                    return true
+                }
+                break
         }
         return false
     }
@@ -58,6 +64,9 @@ ${body()}
         switch (type) {
             case AttitudeType.Boolean:
                 return Boolean.valueOf(value)
+                break
+            case AttitudeType.Function:
+                return new JSONContent(value)
                 break
             case AttitudeType.Number:
                 if (value.isInteger()) return value.toInteger()
