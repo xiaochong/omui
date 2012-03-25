@@ -134,6 +134,31 @@ components {
         containerTag = 'input'
     }
 
+    editor {
+        attitudes {
+            allowImageType = 'Array'
+            basicEntities = 'Boolean'
+            blockedBrowserKeystrokes = 'Array'
+            docType = 'String'
+            enableTabKeyTools = 'Boolean'
+            enterMode = 'Number'
+            filebrowserImageUploadUrl = 'String'
+            height = 'Number'
+            keystrokes = 'Array'
+            readOnly = 'Boolean'
+            resizable = 'Boolean'
+            skin = 'String'
+            startupFocus = 'Boolean'
+            startupMode = 'String'
+            toolbar = 'Array,String'
+            uiColor = 'String'
+            undoStackSize = 'Number'
+            width = 'Number,String'
+        }
+        events = ['onKeyUp']
+        containerTag = 'textarea'
+    }
+
     suggestion {
         attitudes {
             cacheSize = 'Number'

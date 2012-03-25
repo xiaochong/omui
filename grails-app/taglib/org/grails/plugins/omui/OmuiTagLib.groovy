@@ -185,6 +185,34 @@ class OmuiTagLib extends BaseTagLib {
     /**
      * @attr id
      *
+     * @attr allowImageType
+     * @attr basicEntities
+     * @attr blockedBrowserKeystrokes
+     * @attr docType
+     * @attr enableTabKeyTools
+     * @attr enterMode
+     * @attr filebrowserImageUploadUrl
+     * @attr height
+     * @attr keystrokes
+     * @attr readOnly
+     * @attr resizable
+     * @attr skin
+     * @attr startupFocus
+     * @attr startupMode
+     * @attr toolbar
+     * @attr uiColor
+     * @attr undoStackSize
+     * @attr width
+     *
+     * @attr onKeyUp
+     */
+    def editor = { attrs, body ->
+        doTag(attrs, body, "editor", "textarea")
+    }
+
+    /**
+     * @attr id
+     *
      * @attr cacheSize
      * @attr clientFormatter
      * @attr crossDomain
