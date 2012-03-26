@@ -21,4 +21,31 @@ class OmuiExtTagLib extends BaseTagLib {
         if (containerTag == 'input' && !attrs.type) attrs.type = 'button'
         doTag(attrs, body, 'button', containerTag)
     }
+
+    /**
+     * @attr selector The css selector of DOM for tip.
+     *
+     * @attr anchor
+     * @attr anchorOffset
+     * @attr contentEL
+     * @attr delay
+     * @attr height
+     * @attr html
+     * @attr lazyLoad
+     * @attr maxHeight
+     * @attr maxWidth
+     * @attr minHeight
+     * @attr minWidth
+     * @attr offset
+     * @attr region
+     * @attr showOn
+     * @attr trackMouse
+     * @attr url
+     * @attr width
+     *
+     */
+    def tooltip = {attrs, body ->
+        if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
+        doTag(attrs, body, 'tooltip', '', [selector: attrs.selector])
+    }
 }

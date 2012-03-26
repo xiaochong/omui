@@ -31,7 +31,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onLoadComplete
      */
     def tabs = { attrs, body ->
-        doTag(attrs, body, "tabs")
+        doTag(attrs, body, "tabs", "div")
     }
 
     /**
@@ -54,7 +54,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onCollapse
      */
     def accordion = { attrs, body ->
-        doTag(attrs, body, "accordion")
+        doTag(attrs, body, "accordion", "div")
     }
 
     /**
@@ -80,7 +80,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onOpen
      */
     def dialog = { attrs, body ->
-        doTag(attrs, body, "dialog")
+        doTag(attrs, body, "dialog", "div")
     }
 
     /**
@@ -230,7 +230,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def itemSelector = { attrs, body ->
-        doTag(attrs, body, "itemSelector")
+        doTag(attrs, body, "itemSelector", "div")
     }
 
     /**
@@ -261,7 +261,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def panel = { attrs, body ->
-        doTag(attrs, body, "panel")
+        doTag(attrs, body, "panel", "div")
     }
 
     /**
@@ -347,7 +347,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBeforeSlide
      */
     def slider = { attrs, body ->
-        doTag(attrs, body, "slider")
+        doTag(attrs, body, "slider", "div")
     }
 
     /**
@@ -361,7 +361,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSelect
      */
     def menu = { attrs, body ->
-        doTag(attrs, body, "menu")
+        doTag(attrs, body, "menu", "div")
     }
 
     /**
@@ -374,6 +374,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onChange
      */
     def progressbar = { attrs, body ->
-        doTag(attrs, body, "progressbar")
+        doTag(attrs, body, "progressbar", "div")
     }
 }

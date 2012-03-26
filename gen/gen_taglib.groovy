@@ -23,7 +23,7 @@ ${comp.attitudes.collect {"     * @attr ${it.key} "}.join("\n")}
 ${comp.events.collect {"     * @attr ${it} "}.join("\n")}
      */
     def $name = { attrs, body ->
-        doTag(attrs, body, "$name"${comp.containerTag ? ", \"${comp.containerTag}\"" : ''})
+        doTag(attrs, body, "$name"${comp.containerTag ? ", \"${comp.containerTag}\"" : ', "div"'})
     }
     """
 }

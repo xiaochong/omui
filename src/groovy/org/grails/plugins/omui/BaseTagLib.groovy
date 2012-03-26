@@ -5,7 +5,7 @@ import com.alibaba.fastjson.serializer.JSONSerializerMap
 import org.grails.plugins.omui.json.JSONContent
 import org.grails.plugins.omui.json.JsDateFormatSerializer
 
-abstract class BaseTagLib {
+protected abstract class BaseTagLib {
 
     private static JSONSerializerMap mapping = new JSONSerializerMap()
 
@@ -15,8 +15,9 @@ abstract class BaseTagLib {
 
     OmuiComponentService omuiComponentService
 
-    protected doTag(Map attrs, Closure body, String compName, String containerTag = 'div') {
+    protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
         def id = attrs.remove('id') ?: UUID.randomUUID().toString()
+        def selector = extAttrs.remove('selector') ?: "#${id}"
         def outputAttributes = [:]
         def config = JSON.toJSONString(attrs.inject([:]) {Map map, Map.Entry<String, Object> entity ->
             Attitude attitude = omuiComponentService.getAttitude(compName, entity.key)
@@ -32,10 +33,11 @@ abstract class BaseTagLib {
         def outputAttributeContent = outputAttributes.collect {k, v ->
             "$k=\"${v?.encodeAsHTML()}\""
         }.join(' ')
-        out <<
-                """<${containerTag} id="${id}" ${outputAttributeContent}>${body()}</${containerTag}>"""
+        if (containerTag) {
+            out << """<${containerTag} id="${id}" ${outputAttributeContent}>${body()}</${containerTag}>"""
+        }
         r.script {
-            return "jQuery(function(){jQuery('#${id}').om${compName.capitalize()}(${config});});\n"
+            return "jQuery(function(){jQuery('${selector}').om${compName.capitalize()}(${config});});\n"
         }
     }
 

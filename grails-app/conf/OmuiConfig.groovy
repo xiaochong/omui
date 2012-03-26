@@ -285,4 +285,28 @@ components {
         noGen = true
     }
 
+    tooltip {
+        attitudes {
+            anchor = 'Boolean'
+            anchorOffset = 'Number'
+            contentEL = 'Selector'
+            delay = 'Number'
+            height = 'Number'
+            html = 'String'
+            lazyLoad = 'Boolean'
+            maxHeight = 'Number'
+            maxWidth = 'Number'
+            minHeight = 'Number'
+            minWidth = 'Number'
+            offset = 'Object'
+            region = 'String'
+            showOn = 'String'
+            trackMouse = 'Boolean'
+            url = 'String'
+            width = 'Number'
+        }
+        events = ['hide', 'show']
+        noGen = true
+    }
+
 }
