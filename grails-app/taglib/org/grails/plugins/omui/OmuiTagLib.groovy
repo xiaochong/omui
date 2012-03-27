@@ -19,7 +19,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr tabHeight
      * @attr tabWidth
      * @attr width
-     *
      * @attr onActivate
      * @attr onAdd
      * @attr onBeforeActivate
@@ -47,7 +46,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr switchEffect
      * @attr switchMode
      * @attr width
-     *
      * @attr onActivate
      * @attr onBeforeActivate
      * @attr onBeforeCollapse
@@ -74,7 +72,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr resizable
      * @attr title
      * @attr width
-     *
      * @attr onBeforeClose
      * @attr onClose
      * @attr onOpen
@@ -99,7 +96,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr readOnly
      * @attr showTime
      * @attr startDay
-     *
      * @attr onSelect
      */
     def calendar = { attrs, body ->
@@ -128,7 +124,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr value
      * @attr valueField
      * @attr width
-     *
      * @attr onError
      * @attr onSuccess
      * @attr onValueChange
@@ -145,7 +140,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr decimalPrecision
      * @attr disabled
      * @attr readOnly
-     *
      * @attr onBlur
      */
     def numberField = { attrs, body ->
@@ -173,7 +167,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr uiColor
      * @attr undoStackSize
      * @attr width
-     *
      * @attr onKeyUp
      */
     def editor = { attrs, body ->
@@ -196,7 +189,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr preProcess
      * @attr queryName
      * @attr readOnly
-     *
      * @attr onBeforeSuggest
      * @attr onError
      * @attr onSelect
@@ -220,7 +212,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr toolbarIcons
      * @attr value
      * @attr width
-     *
      * @attr onBeforeItemDeselect
      * @attr onBeforeItemSelect
      * @attr onError
@@ -248,7 +239,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr tools
      * @attr url
      * @attr width
-     *
      * @attr onBeforeClose
      * @attr onBeforeCollapse
      * @attr onBeforeExpand
@@ -285,7 +275,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr singleSelect
      * @attr title
      * @attr width
-     *
      * @attr onError
      * @attr onPageChange
      * @attr onRefresh
@@ -308,7 +297,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr showCheckbox
      * @attr showIcon
      * @attr simpleDataModel
-     *
      * @attr onBeforeCollapse
      * @attr onBeforeExpand
      * @attr onBeforeLoad
@@ -342,7 +330,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr interval
      * @attr pauseOnHover
      * @attr startSlide
-     *
      * @attr onAfterSlide
      * @attr onBeforeSlide
      */
@@ -357,7 +344,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr dataSource
      * @attr maxWidth
      * @attr minWidth
-     *
      * @attr onSelect
      */
     def menu = { attrs, body ->
@@ -370,7 +356,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr text
      * @attr value
      * @attr width
-     *
      * @attr onChange
      */
     def progressbar = { attrs, body ->
@@ -384,7 +369,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr icons
      * @attr label
      * @attr width
-     *
      * @attr onClick
      */
     def button = { attrs, body ->
@@ -414,8 +398,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr url
      * @attr width
      *
-     * @attr hide
-     * @attr show
      */
     def tooltip = { attrs, body ->
         if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
@@ -439,7 +421,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr sizeLimit
      * @attr swf
      * @attr width
-     *
      * @attr onAllComplete
      * @attr onCancel
      * @attr onComplete
@@ -452,5 +433,36 @@ class OmuiTagLib extends BaseTagLib {
         attrs.type = "file"
         attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'js/operamasks-ui/swf', file: 'om-fileupload.swf')
         doTag(attrs, body, "fileUpload", "input")
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr errorClass
+     * @attr errorContainer
+     * @attr errorElement
+     * @attr errorLabelContainer
+     * @attr errorPlacement
+     * @attr focusCleanup
+     * @attr focusInvalid
+     * @attr groups
+     * @attr ignore
+     * @attr invalidHandler
+     * @attr messages
+     * @attr onclick
+     * @attr onfocusout
+     * @attr onkeyup
+     * @attr onsubmit
+     * @attr rules
+     * @attr showErrors
+     * @attr submitHandler
+     * @attr success
+     * @attr validClass
+     * @attr wrapper
+     *
+     */
+    def validate = { attrs, body ->
+        if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:validate>!")
+        doTag(attrs, body, 'validate', '', [noOmPrefix: true])
     }
 }

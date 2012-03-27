@@ -14,13 +14,13 @@ out << head
 
 configObject.components.each {name, comp ->
     def body = comp.custom ?: """doTag(attrs, body, "$name"${comp.containerTag ? ", \"${comp.containerTag}\"" : ', "div"'})"""
+    def events = comp.events ? comp.events.collect {"     * @attr ${it} "}.join("\n") : ''
     out << """
     /**
      * @attr id
      *
 ${comp.attitudes.collect {"     * @attr ${it.key} "}.join("\n")}
-     *
-${comp.events.collect {"     * @attr ${it} "}.join("\n")}
+${events?:'     *'}
      */
     def $name = { attrs, body ->
         $body

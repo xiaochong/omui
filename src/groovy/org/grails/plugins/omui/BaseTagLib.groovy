@@ -19,6 +19,7 @@ protected abstract class BaseTagLib {
     protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
         def id = attrs.remove('id') ?: UUID.randomUUID().toString()
         def selector = extAttrs.remove('selector') ?: "#${id}"
+        def noOmPrefix = extAttrs.remove('noOmPrefix')
         def outputAttributes = [:]
         def config = JSON.toJSONString(attrs.inject([:]) {Map map, Map.Entry<String, Object> entity ->
             Attitude attitude = omuiComponentService.getAttitude(compName, entity.key)
@@ -40,7 +41,7 @@ protected abstract class BaseTagLib {
             out << """<${containerTag} id="${id}" ${outputAttributeContent}>${body()}</${containerTag}>"""
         }
         r.script {
-            return "jQuery(function(){jQuery('${selector}').om${compName.capitalize()}(${config});});\n"
+            return "jQuery(function(){jQuery('${selector}').${noOmPrefix ? '' : 'om'}om${compName.capitalize()}(${config});});\n"
         }
     }
 

@@ -307,7 +307,7 @@ components {
             url = 'String'
             width = 'Number'
         }
-        events = ['hide', 'show']
+        events = []
         custom = """if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
         doTag(attrs, body, 'tooltip', '', [selector: attrs.selector])"""
     }
@@ -333,6 +333,35 @@ components {
         custom = """attrs.type = "file"
         attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'js/operamasks-ui/swf', file: 'om-fileupload.swf')
         doTag(attrs, body, "fileUpload", "input")"""
+    }
+
+    validate {
+        attitudes {
+            errorClass = 'String'
+            errorContainer = 'Object'
+            errorElement = 'String'
+            errorLabelContainer = 'Object'
+            errorPlacement = 'Function'
+            focusCleanup = 'Boolean'
+            focusInvalid = 'Boolean'
+            groups = 'JSON'
+            ignore = 'String'
+            invalidHandler = 'Function'
+            messages = 'JSON'
+            onclick = 'Boolean'
+            onfocusout = 'Boolean'
+            onkeyup = 'Boolean'
+            onsubmit = 'Boolean'
+            rules = 'JSON'
+            showErrors = 'Function'
+            submitHandler = 'Function'
+            success = 'String'
+            validClass = 'String'
+            wrapper = 'String'
+        }
+        events = []
+        custom = """if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:validate>!")
+        doTag(attrs, body, 'validate', '', [noOmPrefix: true])"""
     }
 
 }
