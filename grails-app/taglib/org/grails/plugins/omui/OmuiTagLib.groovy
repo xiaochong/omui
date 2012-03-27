@@ -376,4 +376,81 @@ class OmuiTagLib extends BaseTagLib {
     def progressbar = { attrs, body ->
         doTag(attrs, body, "progressbar", "div")
     }
+
+    /**
+     * @attr id
+     *
+     * @attr disabled
+     * @attr icons
+     * @attr label
+     * @attr width
+     *
+     * @attr onClick
+     */
+    def button = { attrs, body ->
+        String containerTag = attrs.remove('tag') ?: 'button'
+        if (containerTag == 'input' && !attrs.type) attrs.type = 'button'
+        doTag(attrs, body, 'button', containerTag)
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr anchor
+     * @attr anchorOffset
+     * @attr contentEL
+     * @attr delay
+     * @attr height
+     * @attr html
+     * @attr lazyLoad
+     * @attr maxHeight
+     * @attr maxWidth
+     * @attr minHeight
+     * @attr minWidth
+     * @attr offset
+     * @attr region
+     * @attr showOn
+     * @attr trackMouse
+     * @attr url
+     * @attr width
+     *
+     * @attr hide
+     * @attr show
+     */
+    def tooltip = { attrs, body ->
+        if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
+        doTag(attrs, body, 'tooltip', '', [selector: attrs.selector])
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr action
+     * @attr actionData
+     * @attr autoUpload
+     * @attr buttonImg
+     * @attr fileDesc
+     * @attr fileExt
+     * @attr height
+     * @attr method
+     * @attr multi
+     * @attr queueSizeLimit
+     * @attr removeCompleted
+     * @attr sizeLimit
+     * @attr swf
+     * @attr width
+     *
+     * @attr onAllComplete
+     * @attr onCancel
+     * @attr onComplete
+     * @attr onError
+     * @attr onProgress
+     * @attr onQueueFull
+     * @attr onSelect
+     */
+    def fileUpload = { attrs, body ->
+        attrs.type = "file"
+        attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'js/operamasks-ui/swf', file: 'om-fileupload.swf')
+        doTag(attrs, body, "fileUpload", "input")
+    }
 }

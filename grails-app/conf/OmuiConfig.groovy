@@ -282,7 +282,9 @@ components {
             width = 'Number'
         }
         events = ['onClick']
-        noGen = true
+        custom = """String containerTag = attrs.remove('tag') ?: 'button'
+        if (containerTag == 'input' && !attrs.type) attrs.type = 'button'
+        doTag(attrs, body, 'button', containerTag)"""
     }
 
     tooltip {
@@ -306,7 +308,8 @@ components {
             width = 'Number'
         }
         events = ['hide', 'show']
-        noGen = true
+        custom = """if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
+        doTag(attrs, body, 'tooltip', '', [selector: attrs.selector])"""
     }
 
     fileUpload {
@@ -327,7 +330,9 @@ components {
             width = 'Number'
         }
         events = ['onAllComplete', 'onCancel', 'onComplete', 'onError', 'onProgress', 'onQueueFull', 'onSelect']
-        noGen = true
+        custom = """attrs.type = "file"
+        attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'js/operamasks-ui/swf', file: 'om-fileupload.swf')
+        doTag(attrs, body, "fileUpload", "input")"""
     }
 
 }
