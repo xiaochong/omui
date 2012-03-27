@@ -309,4 +309,25 @@ components {
         noGen = true
     }
 
+    fileUpload {
+        attitudes {
+            action = 'String'
+            actionData = 'Object'
+            autoUpload = 'Boolean'
+            buttonImg = 'String'
+            fileDesc = 'String'
+            fileExt = 'String'
+            height = 'Number'
+            method = 'String'
+            multi = 'Boolean'
+            queueSizeLimit = 'Number'
+            removeCompleted = 'Boolean'
+            sizeLimit = 'Number'
+            swf = 'String'
+            width = 'Number'
+        }
+        events = ['onAllComplete', 'onCancel', 'onComplete', 'onError', 'onProgress', 'onQueueFull', 'onSelect']
+        noGen = true
+    }
+
 }

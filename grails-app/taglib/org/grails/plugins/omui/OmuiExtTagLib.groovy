@@ -48,4 +48,36 @@ class OmuiExtTagLib extends BaseTagLib {
         if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
         doTag(attrs, body, 'tooltip', '', [selector: attrs.selector])
     }
+
+    /**
+     * @attr id
+     *
+     * @attr action
+     * @attr actionData
+     * @attr autoUpload
+     * @attr buttonImg
+     * @attr fileDesc
+     * @attr fileExt
+     * @attr height
+     * @attr method
+     * @attr multi
+     * @attr queueSizeLimit
+     * @attr removeCompleted
+     * @attr sizeLimit
+     * @attr swf
+     * @attr width
+     *
+     * @attr onAllComplete
+     * @attr onCancel
+     * @attr onComplete
+     * @attr onError
+     * @attr onProgress
+     * @attr onQueueFull
+     * @attr onSelect
+     */
+    def fileUpload = { attrs, body ->
+        attrs.type = "file"
+        attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'js/operamasks-ui/swf', file: 'om-fileupload.swf')
+        doTag(attrs, body, "fileUpload", "input")
+    }
 }
