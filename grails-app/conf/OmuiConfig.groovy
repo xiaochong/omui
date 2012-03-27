@@ -361,7 +361,7 @@ components {
         }
         events = []
         custom = """if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:validate>!")
-        doTag(attrs, body, 'validate', '', [noOmPrefix: true])"""
+        doTag(attrs, body, 'validate', '', [selector: attrs.selector, noOmPrefix: true])"""
     }
 
 }

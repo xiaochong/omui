@@ -41,7 +41,7 @@ protected abstract class BaseTagLib {
             out << """<${containerTag} id="${id}" ${outputAttributeContent}>${body()}</${containerTag}>"""
         }
         r.script {
-            return "jQuery(function(){jQuery('${selector}').${noOmPrefix ? '' : 'om'}om${compName.capitalize()}(${config});});\n"
+            return "jQuery(function(){jQuery('${selector}').${noOmPrefix ? compName : 'om' + compName.capitalize()}(${config});});\n"
         }
     }
 
