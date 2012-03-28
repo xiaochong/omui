@@ -10,19 +10,19 @@ class OmuiComponentServiceTests {
 
     void testService() {
         def service = new OmuiComponentService()
-        assertTrue(service.hasAttitude('button', 'active'))
-        assertFalse(service.hasAttitude('button', 'onActivate'))
-        assertTrue(service.hasEvent('button', 'onActivate'))
-        def attitude = service.getAttitude('button', 'active')
-        def event = service.getEvent('button', 'onActivate')
+        assertTrue(service.hasAttitude('tabs', 'active'))
+        assertFalse(service.hasAttitude('tabs', 'onActivate'))
+        assertTrue(service.hasEvent('tabs', 'onActivate'))
+        def attitude = service.getAttitude('tabs', 'active')
+        def event = service.getEvent('tabs', 'onActivate')
         assertEquals('active', attitude.name)
-        assertEquals('button', attitude.component.name)
+        assertEquals('tabs', attitude.component.name)
         assertTrue(attitude.types.contains(AttitudeType.Number))
         assertTrue(attitude.types.contains(AttitudeType.String))
         assertFalse(attitude.types.contains(AttitudeType.Boolean))
         assertEquals('onActivate', event.name)
-        assertEquals('button', attitude.component.name)
-        assertNull(service.getAttitude('button', 'onActivate'))
-        assertNull(service.getEvent('button', 'active'))
+        assertEquals('tabs', attitude.component.name)
+        assertNull(service.getAttitude('tabs', 'onActivate'))
+        assertNull(service.getEvent('tabs', 'active'))
     }
 }
