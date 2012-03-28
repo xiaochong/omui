@@ -13,6 +13,7 @@ class OmuiTagLib extends BaseTagLib {
 out << head
 
 configObject.components.each {name, comp ->
+    if (comp.noGen) return
     def body = comp.custom ?: """doTag(attrs, body, "$name"${comp.containerTag ? ", \"${comp.containerTag}\"" : ', "div"'})"""
     def events = comp.events ? comp.events.collect {"     * @attr ${it} "}.join("\n") : ''
     out << """
@@ -20,7 +21,7 @@ configObject.components.each {name, comp ->
      * @attr id
      *
 ${comp.attitudes.collect {"     * @attr ${it.key} "}.join("\n")}
-${events?:'     *'}
+${events ?: '     *'}
      */
     def $name = { attrs, body ->
         $body

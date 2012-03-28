@@ -364,4 +364,109 @@ components {
         doTag(attrs, body, 'validate', '', [selector: attrs.selector, noOmPrefix: true])"""
     }
 
+    borderLayout {
+        attitudes {
+            fit = 'Boolean'
+            panels = 'Array'
+            spacing = 'Number'
+        }
+        events = []
+        noGen = true
+    }
+
+    north {
+        attitudes {
+            id = "String"
+            region = "String"
+            title = "String"
+            header = "Boolean"
+            resizable = 'Boolean'
+            collapsible = 'Boolean'
+            closable = 'Boolean'
+            height = 'Number'
+            width = 'Number'
+        }
+        events = []
+        noGen = true
+    }
+
+    south {
+        attitudes {
+            id = "String"
+            region = "String"
+            title = "String"
+            header = "Boolean"
+            resizable = 'Boolean'
+            collapsible = 'Boolean'
+            closable = 'Boolean'
+            height = 'Number'
+            width = 'Number'
+        }
+        events = []
+        noGen = true
+    }
+
+    west {
+        attitudes {
+            id = "String"
+            region = "String"
+            title = "String"
+            header = "Boolean"
+            resizable = 'Boolean'
+            collapsible = 'Boolean'
+            closable = 'Boolean'
+            height = 'Number'
+            width = 'Number'
+        }
+        events = []
+        noGen = true
+    }
+
+    north {
+        attitudes {
+            id = "String"
+            region = "String"
+            title = "String"
+            header = "Boolean"
+            resizable = 'Boolean'
+            collapsible = 'Boolean'
+            closable = 'Boolean'
+            height = 'Number'
+            width = 'Number'
+        }
+        events = []
+        noGen = true
+    }
+
+    center {
+        attitudes {
+            id = "String"
+            region = "String"
+            title = "String"
+            header = "Boolean"
+            resizable = 'Boolean'
+            collapsible = 'Boolean'
+            closable = 'Boolean'
+            height = 'Number'
+            width = 'Number'
+        }
+        events = []
+        noGen = true
+    }
+
+    east {
+        attitudes {
+            id = "String"
+            region = "String"
+            title = "String"
+            header = "Boolean"
+            resizable = 'Boolean'
+            collapsible = 'Boolean'
+            closable = 'Boolean'
+            height = 'Number'
+            width = 'Number'
+        }
+        events = []
+        noGen = true
+    }
 }
