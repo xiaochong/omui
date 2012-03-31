@@ -465,4 +465,41 @@ class OmuiTagLib extends BaseTagLib {
         if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:validate>!")
         doTag(attrs, body, 'validate', '', [selector: attrs.selector, noOmPrefix: true])
     }
+
+    /**
+     * @attr id
+     *
+     * @attr axis
+     * @attr cancel
+     * @attr containment
+     * @attr cursor
+     * @attr disabled
+     * @attr handle
+     * @attr helper
+     * @attr revert
+     * @attr scroll
+     * @attr onDrag
+     * @attr onStart
+     * @attr onStop
+     */
+    def draggable = { attrs, body ->
+        doTag(attrs, body, 'draggable', '', [selector: attrs.selector])
+    }
+
+    /**
+     * @attr id
+     *
+     * @attr accept
+     * @attr activeClass
+     * @attr disabled
+     * @attr greedy
+     * @attr hoverClass
+     * @attr onDragOut
+     * @attr onDragOver
+     * @attr onDragStart
+     * @attr onDrop
+     */
+    def droppable = { attrs, body ->
+        doTag(attrs, body, 'droppable', '', [selector: attrs.selector])
+    }
 }

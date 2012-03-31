@@ -1,8 +1,8 @@
 package org.grails.plugins.omui.util
 
+import org.codehaus.groovy.grails.web.util.StreamCharBuffer
 import org.grails.plugins.omui.AttitudeType
 import org.grails.plugins.omui.json.JSONContent
-import org.codehaus.groovy.grails.web.util.StreamCharBuffer
 
 class AttitudeTypeUtil {
     static Object transform(List<AttitudeType> types, Object value) {
@@ -40,6 +40,7 @@ class AttitudeTypeUtil {
                 }
                 break
             case AttitudeType.JSON:
+            case AttitudeType.Element:
             case AttitudeType.Object:
                 if (value && value.trim().startsWith('{')) {
                     return true
@@ -58,6 +59,7 @@ class AttitudeTypeUtil {
                 return new JSONContent(value)
                 break
             case AttitudeType.JSON:
+            case AttitudeType.Element:
             case AttitudeType.Object:
                 return new JSONContent(value)
                 break

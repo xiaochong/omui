@@ -469,4 +469,32 @@ components {
         events = []
         noGen = true
     }
+
+    draggable {
+        attitudes {
+            axis = "String"
+            cancel = "Selector"
+            containment = "Selector,Element,Array,String"
+            cursor = "String"
+            disabled = "Boolean"
+            handle = "Selector"
+            helper = "String,Function"
+            revert = "Boolean,String"
+            scroll = "Boolean"
+        }
+        events = ['onDrag', 'onStart', 'onStop']
+        custom = """doTag(attrs, body, 'draggable', '', [selector: attrs.selector])"""
+    }
+
+    droppable {
+        attitudes {
+            accept = "Selector,Function"
+            activeClass = "String"
+            disabled = "Boolean"
+            greedy = "Boolean"
+            hoverClass = "String"
+        }
+        events = ['onDragOut', 'onDragOver', 'onDragStart', 'onDrop']
+        custom = """doTag(attrs, body, 'droppable', '', [selector: attrs.selector])"""
+    }
 }
