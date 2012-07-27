@@ -401,7 +401,7 @@ class OmuiTagLib extends BaseTagLib {
      */
     def tooltip = { attrs, body ->
         if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
-        doTag(attrs, body, 'tooltip', '', [selector: attrs.selector])
+        doTag('tooltip', attrs, body)
     }
 
     /**

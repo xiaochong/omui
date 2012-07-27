@@ -1,19 +1,17 @@
 package org.grails.plugins.omui
 
-import org.grails.plugins.omui.component.Accordion
-import org.grails.plugins.omui.component.Button
-import org.grails.plugins.omui.component.FileUpload
-import org.grails.plugins.omui.component.Tabs
 import org.springframework.beans.factory.InitializingBean
 
 import javax.servlet.ServletContext
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
+import org.grails.plugins.omui.component.*
+
 protected abstract class BaseTagLib implements InitializingBean {
 
     private static Map<String, Class<? extends Component>> components = new HashMap<String, Class<? extends Component>>()
-    public static final DEFAULT_COMPONENTS = [Tabs, Accordion, Button, FileUpload]
+    public static final DEFAULT_COMPONENTS = [Tabs, Accordion, Button, FileUpload, Tooltip]
 
     protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
     }
