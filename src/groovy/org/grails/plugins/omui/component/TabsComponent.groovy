@@ -20,12 +20,19 @@ class TabsComponent extends ContainerTagComponent {
     Mixed tabWidth
     Mixed width
 
-    @Argument(["n", "event"])
-    Event onClose
+    @Argument(["n", "event"]) Event onActivate
+    @Argument(["config", "event"]) Event onAdd
+    @Argument(["n", "event"]) Event onBeforeActivate
+    @Argument(["config", "event"]) Event onBeforeAdd
+    @Argument(["n", "event"]) Event onBeforeClose
+    @Argument(["event"]) Event onBeforeCloseAll
+    @Argument(["n", "event"]) Event onClose
+    @Argument(["event"]) Event onCloseAll
+    @Argument(["tabId", "event"]) Event onLoadComplete
 
     @Override
     String getComponentName() {
-        return 'Tabs'
+        return 'tabs'
     }
 
     @Override

@@ -11,6 +11,7 @@ class BorderLayoutTagLib {
      * @attr spacing
      */
     def borderLayout = { attrs, body ->
+        /**
         request.borderLayout = [:]
         body.call()
         def id = attrs.remove('id') ?: UUID.randomUUID().toString()
@@ -40,6 +41,7 @@ class BorderLayoutTagLib {
         r.script {
             return "jQuery(function(){jQuery('#${id}').omBorderLayout(${configJson});});\n"
         }
+         */
     }
 
     /**

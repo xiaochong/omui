@@ -25,8 +25,6 @@ abstract class ContainerTagComponent implements Component {
         serializeConfig.put(Date.class, new JsDateFormatSerializer())
     }
 
-    abstract String getComponentName()
-
     abstract String getContainerTag()
 
     void doRender(RenderContext context) {
