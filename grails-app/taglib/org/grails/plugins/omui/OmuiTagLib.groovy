@@ -1,5 +1,11 @@
 package org.grails.plugins.omui
 
+import org.grails.plugins.omui.component.TabsComponent
+
+import javax.servlet.ServletContext
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
+
 class OmuiTagLib extends BaseTagLib {
 
     static namespace = "om"
@@ -30,7 +36,40 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onLoadComplete
      */
     def tabs = { attrs, body ->
-        doTag(attrs, body, "tabs", "div")
+        def outen=out
+        def rr=r
+        def renderContext = new RenderContext() {
+            HttpServletRequest getRequest() {
+                return request
+            }
+
+            HttpServletResponse getResponse() {
+                return response
+            }
+
+            ServletContext getServletContext() {
+                return servletContext
+            }
+
+            Closure getBody() {
+                return body
+            }
+
+            Map getAttrs() {
+                return attrs
+            }
+
+            Writer getOut() {
+                return outen
+            }
+
+            def getR() {
+                return rr
+            }
+        }
+
+        new TabsComponent().doRender(renderContext)
+//        doTag(attrs, body, "tabs", "div")
     }
 
     /**
