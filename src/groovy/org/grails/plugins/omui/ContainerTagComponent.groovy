@@ -11,7 +11,7 @@ import org.grails.plugins.omui.json.Mixed
 import org.grails.plugins.omui.serializer.JsDateFormatSerializer
 import org.springframework.beans.BeanWrapperImpl
 
-abstract class ContainerTagComponent implements Renderable {
+abstract class ContainerTagComponent implements Component {
     final static ArrayList<String> EXCLUDE_NAMES = ['componentName', 'containerTag', 'metaClass']
     final static SerializeConfig serializeConfig = new SerializeConfig()
     final static PropertyFilter propertyFilter = new PropertyFilter() {

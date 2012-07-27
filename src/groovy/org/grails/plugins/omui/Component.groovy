@@ -1,5 +1,6 @@
 package org.grails.plugins.omui
 
-class Component {
-    String name
+public interface Component {
+
+    void doRender(RenderContext context)
 }

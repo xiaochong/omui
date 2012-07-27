@@ -2,7 +2,6 @@ package org.grails.plugins.omui
 
 protected abstract class BaseTagLib {
 
-    AttitudeTypeService attitudeTypeService
 
     protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
         def id = attrs.remove('id') ?: UUID.randomUUID().toString()
