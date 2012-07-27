@@ -52,7 +52,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onCollapse
      */
     def accordion = { attrs, body ->
-        doTag(attrs, body, "accordion", "div")
+        doTag("accordion", attrs, body)
     }
 
     /**
