@@ -2,6 +2,7 @@ package org.grails.plugins.omui
 
 import org.grails.plugins.omui.component.Accordion
 import org.grails.plugins.omui.component.Button
+import org.grails.plugins.omui.component.FileUpload
 import org.grails.plugins.omui.component.Tabs
 import org.springframework.beans.factory.InitializingBean
 
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletResponse
 protected abstract class BaseTagLib implements InitializingBean {
 
     private static Map<String, Class<? extends Component>> components = new HashMap<String, Class<? extends Component>>()
-    public static final DEFAULT_COMPONENTS = [Tabs, Accordion, Button]
+    public static final DEFAULT_COMPONENTS = [Tabs, Accordion, Button, FileUpload]
 
     protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
     }

@@ -431,8 +431,8 @@ class OmuiTagLib extends BaseTagLib {
      */
     def fileUpload = { attrs, body ->
         attrs.type = "file"
-        attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'js/operamasks-ui/swf', file: 'om-fileupload.swf')
-        doTag(attrs, body, "fileUpload", "input")
+        attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'operamasks-ui/swf', file: 'om-fileupload.swf')
+        doTag("fileUpload", attrs, body)
     }
 
     /**

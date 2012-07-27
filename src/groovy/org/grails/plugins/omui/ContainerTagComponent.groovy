@@ -4,6 +4,7 @@ import com.alibaba.fastjson.serializer.JSONSerializer
 import com.alibaba.fastjson.serializer.PropertyFilter
 import com.alibaba.fastjson.serializer.SerializeConfig
 import com.alibaba.fastjson.serializer.SerializeWriter
+import org.codehaus.groovy.grails.web.util.StreamCharBuffer
 import org.grails.plugins.omui.editors.EventEditor
 import org.grails.plugins.omui.editors.MixedEditor
 import org.grails.plugins.omui.json.Event
@@ -51,6 +52,9 @@ abstract class ContainerTagComponent implements Component {
                     }
                     beanWrapper.setPropertyValue(key, value.toString())
                 } else {
+                    if (value instanceof StreamCharBuffer) {
+                        value = value.toString()
+                    }
                     beanWrapper.setPropertyValue(key, value)
                 }
             }
