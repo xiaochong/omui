@@ -2,6 +2,7 @@ package org.grails.plugins.omui.json
 
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.JSONAware
+import org.codehaus.groovy.grails.web.util.StreamCharBuffer
 
 class Mixed implements JSONAware {
     def value
@@ -11,6 +12,7 @@ class Mixed implements JSONAware {
     }
 
     String toJSONString() {
+        if (value instanceof StreamCharBuffer) value = value.toString()
         if (value && value instanceof String) {
             String trimValue = value.trim()
             if (trimValue == 'true' || trimValue == 'false' || trimValue.isNumber() || trimValue.startsWith('function') ||
@@ -18,6 +20,6 @@ class Mixed implements JSONAware {
                 value = new JSONContent(trimValue)
             }
         }
-        return JSON.toJSONString(value)
+        return value ? JSON.toJSONString(value) : ''
     }
 }
