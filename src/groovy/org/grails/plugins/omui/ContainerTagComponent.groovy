@@ -61,7 +61,7 @@ abstract class ContainerTagComponent implements Component {
         def attrs = context.attrs
         attrs.id = attrs.id ?: UUID.randomUUID().toString()
         def remainAttributes = attrs.findAll {
-            !it.metaClass.hasProperty(this, it.key.toString())
+            !this.metaClass.hasProperty(this, it.key.toString())
         }
         def outputAttributeContent = remainAttributes.collect {k, v ->
             "$k=\"${v?.encodeAsHTML()}\""

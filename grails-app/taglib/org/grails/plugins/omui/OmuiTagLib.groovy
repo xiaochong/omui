@@ -372,9 +372,9 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onClick
      */
     def button = { attrs, body ->
-        String containerTag = attrs.remove('tag') ?: 'button'
-        if (containerTag == 'input' && !attrs.type) attrs.type = 'button'
-        doTag(attrs, body, 'button', containerTag)
+        attrs.tag = attrs.tag ?: 'button'
+        if (attrs.tag == 'input' && !attrs.type) attrs.type = 'button'
+        doTag('button', attrs, body)
     }
 
     /**
