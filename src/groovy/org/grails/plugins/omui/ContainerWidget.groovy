@@ -15,6 +15,7 @@ abstract class ContainerWidget extends BaseWidget {
     String getHtml(RenderContext context) {
         def attrs = context.attrs
         def remainAttributes = attrs.findAll {
+            if ('selector' == it.key) return false
             if ('class' == it.key) return true
             else return !this.metaClass.hasProperty(this, it.key.toString())
         }
