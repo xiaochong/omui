@@ -5,7 +5,7 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Panel extends ContainerTagComponent{
+class Panel extends ContainerTagComponent {
     Boolean closable
     Boolean closed
     Boolean collapsed
@@ -26,10 +26,10 @@ class Panel extends ContainerTagComponent{
     @Argument(["event"]) Event onBeforeOpen
     @Argument(["event"]) Event onClose
     @Argument(["event"]) Event onCollapse
-    @Argument(["xmlHttpRequest","textStatus","errorThrown","event"]) Event onError
+    @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
     @Argument(["event"]) Event onExpand
     @Argument(["event"]) Event onOpen
-    @Argument(["data","textStatus","event"]) Event onSuccess
+    @Argument(["data", "textStatus", "event"]) Event onSuccess
 
     @Override
     String getContainerTag() {

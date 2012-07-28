@@ -5,7 +5,7 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Calendar extends ContainerTagComponent{
+class Calendar extends ContainerTagComponent {
     Date date
     String dateFormat
     Boolean disabled
@@ -20,7 +20,7 @@ class Calendar extends ContainerTagComponent{
     Boolean showTime
     Integer startDay
 
-    @Argument(["date","event"]) Event onSelect
+    @Argument(["date", "event"]) Event onSelect
 
     @Override
     String getContainerTag() {

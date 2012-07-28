@@ -5,7 +5,7 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Suggestion extends ContainerTagComponent{
+class Suggestion extends ContainerTagComponent {
 
     Integer cacheSize
     Mixed clientFormatter //Function
@@ -21,11 +21,11 @@ class Suggestion extends ContainerTagComponent{
     String queryName
     Boolean readOnly
 
-    @Argument(["text","event"]) Event onBeforeSuggest
-    @Argument(["xmlHttpRequest","textStatus","errorThrown","event"]) Event onError
-    @Argument(["text","rowData","index","event"]) Event onSelect
-    @Argument(["data","textStatus","event"]) Event onSuccess
-    @Argument(["text","event"]) Event onSuggesting
+    @Argument(["text", "event"]) Event onBeforeSuggest
+    @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
+    @Argument(["text", "rowData", "index", "event"]) Event onSelect
+    @Argument(["data", "textStatus", "event"]) Event onSuccess
+    @Argument(["text", "event"]) Event onSuggesting
 
 
     @Override

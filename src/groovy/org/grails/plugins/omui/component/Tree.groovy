@@ -5,7 +5,7 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Tree extends ContainerTagComponent{
+class Tree extends ContainerTagComponent {
     Boolean cascadeCheck
     Mixed dataSource
     Boolean draggable
@@ -18,14 +18,14 @@ class Tree extends ContainerTagComponent{
     @Argument(["nodeData"]) Event onBeforeLoad
     @Argument(["nodeData"]) Event onBeforeSelect
     @Argument(["nodeData"]) Event onCheck
-    @Argument(["nodeData","event"]) Event onClick
+    @Argument(["nodeData", "event"]) Event onClick
     @Argument(["nodeData"]) Event onCollapse
-    @Argument(["nodeData","event"]) Event onDblClick
-    @Argument(["nodeData","event"]) Event onDrag
-    @Argument(["nodeData","event"]) Event onDrop
-    @Argument(["xmlHttpRequest","textStatus","errorThrown","event"]) Event onError
+    @Argument(["nodeData", "event"]) Event onDblClick
+    @Argument(["nodeData", "event"]) Event onDrag
+    @Argument(["nodeData", "event"]) Event onDrop
+    @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
     @Argument(["nodeData"]) Event onExpand
-    @Argument(["nodeData","event"]) Event onRightClick
+    @Argument(["nodeData", "event"]) Event onRightClick
     @Argument(["nodeData"]) Event onSelect
     @Argument(["data"]) Event onSuccess
 

@@ -5,7 +5,7 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Slider extends ContainerTagComponent{
+class Slider extends ContainerTagComponent {
     String activeNavCls
     Integer animSpeed
     Boolean autoPlay
@@ -17,8 +17,8 @@ class Slider extends ContainerTagComponent{
     Boolean pauseOnHover
     Integer startSlide
 
-    @Argument(["index","event"]) Event onAfterSlide
-    @Argument(["index","event"]) Event onBeforeSlide
+    @Argument(["index", "event"]) Event onAfterSlide
+    @Argument(["index", "event"]) Event onBeforeSlide
 
     @Override
     String getContainerTag() {

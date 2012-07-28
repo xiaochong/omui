@@ -5,12 +5,12 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Progressbar extends ContainerTagComponent{
+class Progressbar extends ContainerTagComponent {
     Mixed text
     Integer value
     Mixed width
 
-    @Argument(["newValue","oldValue","event"]) Event onChange
+    @Argument(["newValue", "oldValue", "event"]) Event onChange
 
     @Override
     String getContainerTag() {

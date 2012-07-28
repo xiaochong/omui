@@ -5,7 +5,7 @@ import org.grails.plugins.omui.ContainerTagComponent
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Combo extends ContainerTagComponent{
+class Combo extends ContainerTagComponent {
     Boolean autoFilter
     Mixed dataSource
     Boolean disabled
@@ -27,9 +27,9 @@ class Combo extends ContainerTagComponent{
     Mixed valueField
     String width
 
-    @Argument(["xmlHttpRequest","textStatus","errorThrown","event"]) Event onError
-    @Argument(["data","textStatus","event"]) Event onSuccess
-    @Argument(["target","newValue","oldValue","event"]) Event onValueChange
+    @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
+    @Argument(["data", "textStatus", "event"]) Event onSuccess
+    @Argument(["target", "newValue", "oldValue", "event"]) Event onValueChange
 
     @Override
     String getContainerTag() {
