@@ -1,47 +1,18 @@
 package org.grails.plugins.omui
 
-class BorderLayoutTagLib {
+class BorderLayoutTagLib extends BaseTagLib {
     static namespace = "om"
 
-    def attitudeTypeService
     /**
      * @attr id
      *
      * @attr fit
      * @attr spacing
+     * @attr hideCollapsBtn
      */
     def borderLayout = { attrs, body ->
-        /**
-        request.borderLayout = [:]
-        body.call()
-        def id = attrs.remove('id') ?: UUID.randomUUID().toString()
-        def panels = [:]
-        request.borderLayout.each {key, value ->
-            panels[key] = request.borderLayout[key]
-        }
-        request.removeAttribute('borderLayout')
-        def panelBodyMap = [:]
-        attrs.panels = panels.inject([]) {List list, Map.Entry<String, Map> entry ->
-            panelBodyMap[entry.key] = entry.value.remove('body')
-            list << attitudeTypeService.attrsToConfig(entry.key, entry.value, [:])
-            return list
-        }
-        def remainAttributes = [:]
-        def config = attitudeTypeService.attrsToConfig('borderLayout', attrs, remainAttributes)
-        def outputAttributeContent = remainAttributes.collect {k, v ->
-            "$k=\"${v?.encodeAsHTML()}\""
-        }.join(' ')
-        out << """<div id="${id}" ${outputAttributeContent}>"""
-        panels.each {key, attr ->
-            def panelBody = panelBodyMap[key]
-            out << """<div id="${attr.id}">${panelBody}</div>"""
-        }
-        out << "</div>"
-        def configJson = attitudeTypeService.configToJson(config)
-        r.script {
-            return "jQuery(function(){jQuery('#${id}').omBorderLayout(${configJson});});\n"
-        }
-         */
+        request.borderLayout = []
+        doTag('omBorderLayout', attrs, body)
     }
 
     /**
@@ -54,6 +25,15 @@ class BorderLayoutTagLib {
      * @attr closable
      * @attr height
      * @attr width
+     *
+     * @attr onCollapse
+     * @attr onBeforeCollapse
+     * @attr onExpand
+     * @attr onBeforeExpand
+     * @attr onOpen
+     * @attr onBeforeOpen
+     * @attr onClose
+     * @attr onBeforeClose
      *
      */
     def north = {attrs, body ->
@@ -71,6 +51,15 @@ class BorderLayoutTagLib {
      * @attr height
      * @attr width
      *
+     * @attr onCollapse
+     * @attr onBeforeCollapse
+     * @attr onExpand
+     * @attr onBeforeExpand
+     * @attr onOpen
+     * @attr onBeforeOpen
+     * @attr onClose
+     * @attr onBeforeClose
+     *
      */
     def south = {attrs, body ->
         configRegion('south', attrs, body)
@@ -87,6 +76,15 @@ class BorderLayoutTagLib {
      * @attr height
      * @attr width
      *
+     * @attr onCollapse
+     * @attr onBeforeCollapse
+     * @attr onExpand
+     * @attr onBeforeExpand
+     * @attr onOpen
+     * @attr onBeforeOpen
+     * @attr onClose
+     * @attr onBeforeClose
+     *
      */
     def west = {attrs, body ->
         configRegion('west', attrs, body)
@@ -100,6 +98,15 @@ class BorderLayoutTagLib {
      * @attr resizable
      * @attr collapsible
      * @attr height
+     *
+     * @attr onCollapse
+     * @attr onBeforeCollapse
+     * @attr onExpand
+     * @attr onBeforeExpand
+     * @attr onOpen
+     * @attr onBeforeOpen
+     * @attr onClose
+     * @attr onBeforeClose
      *
      */
     def center = {attrs, body ->
@@ -117,6 +124,15 @@ class BorderLayoutTagLib {
      * @attr height
      * @attr width
      *
+     * @attr onCollapse
+     * @attr onBeforeCollapse
+     * @attr onExpand
+     * @attr onBeforeExpand
+     * @attr onOpen
+     * @attr onBeforeOpen
+     * @attr onClose
+     * @attr onBeforeClose
+     *
      */
     def east = {attrs, body ->
         configRegion('east', attrs, body)
@@ -126,9 +142,7 @@ class BorderLayoutTagLib {
         if (request.borderLayout == null) {
             throwTagError("[borderLayout] parent tag must be specified to for <om:${region}>!")
         }
-        attrs.id = attrs.id ?: UUID.randomUUID().toString()
         attrs.region = region
-        attrs.body = body.call()
-        request.borderLayout[region] = attrs
+        doTag('omRegionPanel', attrs, body)
     }
 }
