@@ -13,9 +13,6 @@ protected abstract class BaseTagLib implements InitializingBean, ApplicationCont
     ApplicationContext applicationContext
     private static Map<String, Class<? extends Widget>> widgets = new HashMap<String, Class<? extends Widget>>()
 
-    protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
-    }
-
     protected doTag(String widget, Map attrs, Closure body) {
         def comCls = widgets.get(widget)
         def renderContext = new DefaultRenderContext(this, widget, attrs, body)
