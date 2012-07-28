@@ -483,7 +483,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onStop
      */
     def draggable = { attrs, body ->
-        doTag(attrs, body, 'draggable', '', [selector: attrs.selector])
+        doTag('omDraggable', attrs, body)
     }
 
     /**
@@ -500,6 +500,6 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onDrop
      */
     def droppable = { attrs, body ->
-        doTag(attrs, body, 'droppable', '', [selector: attrs.selector])
+        doTag('omDroppable', attrs, body)
     }
 }
