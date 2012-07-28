@@ -1,11 +1,12 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.grails.plugins.omui.ContainerWidget
 
-class Panel extends ContainerTagComponent {
+class Panel extends ContainerWidget {
     Boolean closable
     Boolean closed
     Boolean collapsed
@@ -37,7 +38,7 @@ class Panel extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "panel"
     }
 }

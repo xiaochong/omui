@@ -1,11 +1,12 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.grails.plugins.omui.ContainerWidget
 
-class FileUpload extends ContainerTagComponent {
+class FileUpload extends ContainerWidget {
     String action
     Mixed actionData
     Boolean autoUpload
@@ -34,7 +35,7 @@ class FileUpload extends ContainerTagComponent {
         return "input"
     }
 
-    String getComponentName() {
+    String getWidgetName() {
         return 'fileUpload'
     }
 }

@@ -1,6 +1,6 @@
 package org.grails.plugins.omui
 
-abstract class ContainerTagComponent extends BaseTagComponent {
+abstract class ContainerWidget extends BaseWidget {
 
     abstract String getContainerTag()
 

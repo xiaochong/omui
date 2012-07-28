@@ -1,11 +1,13 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Tabs extends ContainerTagComponent {
+import org.grails.plugins.omui.ContainerWidget
+
+class Tabs extends ContainerWidget {
     Mixed active
     Boolean autoPlay
     Boolean border
@@ -31,7 +33,7 @@ class Tabs extends ContainerTagComponent {
     @Argument(["tabId", "event"]) Event onLoadComplete
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return 'tabs'
     }
 

@@ -1,11 +1,13 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Editor extends ContainerTagComponent {
+import org.grails.plugins.omui.ContainerWidget
+
+class Editor extends ContainerWidget {
     Mixed allowImageType
     Boolean basicEntities
     Mixed blockedBrowserKeystrokes
@@ -33,7 +35,7 @@ class Editor extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "editor"
     }
 }

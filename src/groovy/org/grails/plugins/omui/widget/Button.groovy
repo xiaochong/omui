@@ -1,12 +1,14 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.RenderContext
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Button extends ContainerTagComponent {
+import org.grails.plugins.omui.ContainerWidget
+
+class Button extends ContainerWidget {
     transient String tag
     String disabled
     Mixed icons
@@ -26,7 +28,7 @@ class Button extends ContainerTagComponent {
         return tag
     }
 
-    String getComponentName() {
+    String getWidgetName() {
         return 'button'
     }
 }

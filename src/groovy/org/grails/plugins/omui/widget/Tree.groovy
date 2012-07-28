@@ -1,11 +1,11 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Tree extends ContainerTagComponent {
+class Tree extends ContainerWidget {
     Boolean cascadeCheck
     Mixed dataSource
     Boolean draggable
@@ -35,7 +35,7 @@ class Tree extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "tree"
     }
 }

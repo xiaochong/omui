@@ -1,11 +1,11 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Grid extends ContainerTagComponent {
+class Grid extends ContainerWidget {
     Boolean autoFit
     Mixed colModel
     String dataSource
@@ -44,7 +44,7 @@ class Grid extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "grid"
     }
 }

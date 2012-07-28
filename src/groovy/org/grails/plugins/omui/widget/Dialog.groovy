@@ -1,11 +1,12 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.grails.plugins.omui.ContainerWidget
 
-class Dialog extends ContainerTagComponent {
+class Dialog extends ContainerWidget {
     Boolean autoOpen
     Mixed buttons
     Boolean closeOnEscape
@@ -32,7 +33,7 @@ class Dialog extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "dialog"
     }
 }

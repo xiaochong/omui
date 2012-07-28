@@ -1,11 +1,12 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.grails.plugins.omui.ContainerWidget
 
-class Calendar extends ContainerTagComponent {
+class Calendar extends ContainerWidget {
     Date date
     String dateFormat
     Boolean disabled
@@ -28,7 +29,7 @@ class Calendar extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "calendar"
     }
 }

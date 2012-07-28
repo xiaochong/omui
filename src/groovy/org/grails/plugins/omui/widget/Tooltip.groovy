@@ -1,10 +1,11 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
-import org.grails.plugins.omui.SelectorTagComponent
 import org.grails.plugins.omui.json.Mixed
 
+import org.grails.plugins.omui.SelectorWidget
 
-class Tooltip extends SelectorTagComponent {
+
+class Tooltip extends SelectorWidget {
 
     Boolean anchor
     Double anchorOffset
@@ -24,7 +25,7 @@ class Tooltip extends SelectorTagComponent {
     String url
     Double width
 
-    String getComponentName() {
+    String getWidgetName() {
         return 'tooltip'
     }
 }

@@ -1,10 +1,11 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
-import org.grails.plugins.omui.json.Event
 
-class Menu extends ContainerTagComponent {
+import org.grails.plugins.omui.json.Event
+import org.grails.plugins.omui.ContainerWidget
+
+class Menu extends ContainerWidget {
     Boolean contextMenu
     String dataSource
     Integer maxWidth
@@ -18,7 +19,7 @@ class Menu extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "menu"
     }
 }

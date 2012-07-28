@@ -1,10 +1,12 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 
-class NumberField extends ContainerTagComponent {
+import org.grails.plugins.omui.ContainerWidget
+
+class NumberField extends ContainerWidget {
     Boolean allowDecimals
     Boolean allowNegative
     Integer decimalPrecision
@@ -19,7 +21,7 @@ class NumberField extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "numberField"
     }
 }

@@ -6,31 +6,31 @@ import javax.servlet.ServletContext
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-import org.grails.plugins.omui.component.*
+import org.grails.plugins.omui.widget.*
 
 protected abstract class BaseTagLib implements InitializingBean {
 
-    private static Map<String, Class<? extends Component>> components = new HashMap<String, Class<? extends Component>>()
-    public static final DEFAULT_COMPONENTS = [Tabs, Accordion, Button, FileUpload, Tooltip]
+    private static Map<String, Class<? extends Widget>> widgets = new HashMap<String, Class<? extends Widget>>()
+    public static final DEFAULT_WIDGETS = [Tabs, Accordion, Button, FileUpload, Tooltip]
 
     protected doTag(Map attrs, Closure body, String compName, String containerTag, Map extAttrs = [:]) {
     }
 
     protected doTag(String componentName, Map attrs, Closure body) {
-        def comCls = components.get(componentName)
+        def comCls = widgets.get(componentName)
         def renderContext = new DefaultRenderContext(this, attrs, body)
         comCls.newInstance().doRender(renderContext)
     }
 
     void afterPropertiesSet() {
-        DEFAULT_COMPONENTS.each {
+        DEFAULT_WIDGETS.each {
             def component = it.newInstance()
             registerComponent(component)
         }
     }
 
-    public void registerComponent(Component component) {
-        components.put(component.componentName, component.class)
+    public void registerComponent(Widget component) {
+        widgets.put(component.widgetName, component.class)
     }
 
     static class DefaultRenderContext implements RenderContext {

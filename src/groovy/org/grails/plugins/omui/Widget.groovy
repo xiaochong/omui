@@ -1,8 +1,8 @@
 package org.grails.plugins.omui
 
-public interface Component {
+public interface Widget {
 
-    String getComponentName()
+    String getWidgetName()
 
     void doRender(RenderContext context)
 }

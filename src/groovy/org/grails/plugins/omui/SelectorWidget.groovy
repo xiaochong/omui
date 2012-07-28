@@ -1,6 +1,6 @@
 package org.grails.plugins.omui
 
-abstract class SelectorTagComponent extends BaseTagComponent {
+abstract class SelectorWidget extends BaseWidget {
 
     @Override
     void init(RenderContext context) {

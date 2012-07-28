@@ -1,11 +1,12 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.grails.plugins.omui.ContainerWidget
 
-class Suggestion extends ContainerTagComponent {
+class Suggestion extends ContainerWidget {
 
     Integer cacheSize
     Mixed clientFormatter //Function
@@ -34,7 +35,7 @@ class Suggestion extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "suggestion"
     }
 }

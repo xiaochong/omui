@@ -1,11 +1,13 @@
-package org.grails.plugins.omui.component
+package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-import org.grails.plugins.omui.ContainerTagComponent
+
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 
-class Slider extends ContainerTagComponent {
+import org.grails.plugins.omui.ContainerWidget
+
+class Slider extends ContainerWidget {
     String activeNavCls
     Integer animSpeed
     Boolean autoPlay
@@ -26,7 +28,7 @@ class Slider extends ContainerTagComponent {
     }
 
     @Override
-    String getComponentName() {
+    String getWidgetName() {
         return "slider"
     }
 }
