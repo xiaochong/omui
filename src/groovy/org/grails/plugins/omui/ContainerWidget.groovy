@@ -15,7 +15,8 @@ abstract class ContainerWidget extends BaseWidget {
     String getHtml(RenderContext context) {
         def attrs = context.attrs
         def remainAttributes = attrs.findAll {
-            !this.metaClass.hasProperty(this, it.key.toString())
+            if ('class' == it.key) return true
+            else return !this.metaClass.hasProperty(this, it.key.toString())
         }
         def outputAttributeContent = remainAttributes.collect {k, v ->
             "$k=\"${v?.encodeAsHTML()}\""
