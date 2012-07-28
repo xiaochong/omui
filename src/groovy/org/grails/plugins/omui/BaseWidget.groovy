@@ -6,8 +6,10 @@ import com.alibaba.fastjson.serializer.SerializeConfig
 import com.alibaba.fastjson.serializer.SerializeWriter
 import org.codehaus.groovy.grails.web.util.StreamCharBuffer
 import org.grails.plugins.omui.editors.EventEditor
+import org.grails.plugins.omui.editors.FunctionEditor
 import org.grails.plugins.omui.editors.MixedEditor
 import org.grails.plugins.omui.json.Event
+import org.grails.plugins.omui.json.Function
 import org.grails.plugins.omui.json.Mixed
 import org.grails.plugins.omui.serializer.JsDateFormatSerializer
 import org.springframework.beans.BeanWrapperImpl
@@ -34,10 +36,14 @@ abstract class BaseWidget implements Widget {
         BeanWrapperImpl beanWrapper = new BeanWrapperImpl(this)
         beanWrapper.registerCustomEditor(Event.class, new EventEditor())
         beanWrapper.registerCustomEditor(Mixed.class, new MixedEditor())
+        beanWrapper.registerCustomEditor(Function.class, new FunctionEditor())
         context.attrs.collect {it.key}.each {String key ->
             if ('class' != key && this.metaClass.hasProperty(this, key)) {
                 def value = context.attrs.remove(key)
-                if (key.startsWith('on') && this.hasProperty(key)) {
+                if (value instanceof StreamCharBuffer) {
+                    value = value.toString()
+                }
+                if (this.metaClass.getMetaProperty(key).type == Event) {
                     def argument = this.class.getDeclaredField(key).getAnnotation(Argument)
                     if (argument) {
                         value = "function(${argument.value().join(',')}){$value}"
@@ -46,15 +52,11 @@ abstract class BaseWidget implements Widget {
                     }
                     beanWrapper.setPropertyValue(key, value.toString())
                 } else {
-                    if (value instanceof StreamCharBuffer) {
-                        value = value.toString()
-                    }
                     beanWrapper.setPropertyValue(key, value)
                 }
             }
         }
     }
-
 
     String getScript(RenderContext context) {
         def selector = context.attrs.remove('selector')
