@@ -436,7 +436,7 @@ class OmuiTagLib extends BaseTagLib {
     }
 
     /**
-     * @attr id
+     * @attr selector
      *
      * @attr errorClass
      * @attr errorContainer
@@ -467,7 +467,7 @@ class OmuiTagLib extends BaseTagLib {
     }
 
     /**
-     * @attr id
+     * @attr selector
      *
      * @attr axis
      * @attr cancel
@@ -483,11 +483,12 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onStop
      */
     def draggable = { attrs, body ->
+        if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:draggable>!")
         doTag('omDraggable', attrs, body)
     }
 
     /**
-     * @attr id
+     * @attr selector
      *
      * @attr accept
      * @attr activeClass
@@ -500,6 +501,19 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onDrop
      */
     def droppable = { attrs, body ->
+        if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:droppable>!")
         doTag('omDroppable', attrs, body)
     }
+
+    /**
+     * @attr selector
+     *
+     * @attr thick
+     */
+    def scrollbar = { attrs, body ->
+        if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:scrollbar>!")
+        doTag('omScrollbar', attrs, body)
+    }
+
+
 }
