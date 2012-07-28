@@ -17,6 +17,6 @@ modules = {
     }
 
     'operamasks-ui' {
-        dependsOn 'operamasks-ui-jquery,operamasks-ui-js,operamasks-ui-theme-default'
+        dependsOn 'operamasks-ui-jquery,operamasks-ui-js,operamasks-ui-theme-apusic'
     }
 }
