@@ -77,7 +77,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onOpen
      */
     def dialog = { attrs, body ->
-        doTag(attrs, body, "dialog", "div")
+        doTag("dialog",attrs, body)
     }
 
     /**
@@ -99,7 +99,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSelect
      */
     def calendar = { attrs, body ->
-        doTag(attrs, body, "calendar", "input")
+        doTag("calendar",attrs, body)
     }
 
     /**
@@ -129,7 +129,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onValueChange
      */
     def combo = { attrs, body ->
-        doTag(attrs, body, "combo", "input")
+        doTag("combo",attrs, body)
     }
 
     /**
@@ -143,7 +143,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBlur
      */
     def numberField = { attrs, body ->
-        doTag(attrs, body, "numberField", "input")
+        doTag("numberField",attrs, body)
     }
 
     /**
@@ -170,7 +170,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onKeyUp
      */
     def editor = { attrs, body ->
-        doTag(attrs, body, "editor", "textarea")
+        doTag("editor",attrs, body)
     }
 
     /**
@@ -196,7 +196,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuggesting
      */
     def suggestion = { attrs, body ->
-        doTag(attrs, body, "suggestion", "input")
+        doTag("suggestion",attrs, body)
     }
 
     /**
@@ -221,7 +221,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def itemSelector = { attrs, body ->
-        doTag(attrs, body, "itemSelector", "div")
+        doTag("itemSelector",attrs, body)
     }
 
     /**
@@ -251,7 +251,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def panel = { attrs, body ->
-        doTag(attrs, body, "panel", "div")
+        doTag("panel",attrs, body)
     }
 
     /**
@@ -285,7 +285,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def grid = { attrs, body ->
-        doTag(attrs, body, "grid", "table")
+        doTag( "grid",attrs, body)
     }
 
     /**
@@ -314,7 +314,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def tree = { attrs, body ->
-        doTag(attrs, body, "tree", "ul")
+        doTag("tree",attrs, body)
     }
 
     /**
@@ -334,7 +334,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBeforeSlide
      */
     def slider = { attrs, body ->
-        doTag(attrs, body, "slider", "div")
+        doTag("slider",attrs, body)
     }
 
     /**
@@ -347,7 +347,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSelect
      */
     def menu = { attrs, body ->
-        doTag(attrs, body, "menu", "div")
+        doTag( "menu",attrs, body)
     }
 
     /**
@@ -359,7 +359,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onChange
      */
     def progressbar = { attrs, body ->
-        doTag(attrs, body, "progressbar", "div")
+        doTag("progressbar",attrs, body)
     }
 
     /**
