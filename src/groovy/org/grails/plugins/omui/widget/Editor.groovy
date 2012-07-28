@@ -15,7 +15,7 @@ class Editor extends ContainerWidget {
     Boolean enableTabKeyTools
     Integer enterMode
     String filebrowserImageUploadUrl
-    Integer height
+    Mixed height
     Mixed keystrokes
     Boolean readOnly
     Boolean resizable

@@ -13,7 +13,7 @@ class Dialog extends ContainerWidget {
     Boolean closeOnEscape
     String dialogClass
     Boolean draggable
-    Integer height
+    Mixed height
     Integer maxHeight
     Integer maxWidth
     Integer minHeight
@@ -21,7 +21,7 @@ class Dialog extends ContainerWidget {
     Boolean modal
     Boolean resizable
     String title
-    Integer width
+    Mixed width
     Integer zIndex
 
     @Argument(["event"]) Event onBeforeClose

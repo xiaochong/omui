@@ -3,6 +3,7 @@ package org.grails.plugins.omui.widget
 import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
+import org.grails.plugins.omui.json.Function
 import org.grails.plugins.omui.json.Mixed
 import org.springframework.stereotype.Component
 
@@ -15,13 +16,13 @@ class Grid extends ContainerWidget {
     String emptyMsg
     String errorMsg
     Mixed extraData //JSON
-    Integer height
+    Mixed height
     Integer limit
     String loadingMsg
     String method
     String pageStat
     String pageText
-    Mixed preProcess
+    Function preProcess
     Mixed rowClasses
     Boolean showIndex
     Boolean singleSelect
@@ -31,7 +32,7 @@ class Grid extends ContainerWidget {
     @Argument(["rowIndex", "rowData"]) Event onAfterEdit
     @Argument(["rowIndex", "rowData"]) Event onBeforeEdit
     Event onCancelEdit
-    @Argument(["XMLHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
+    @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
     @Argument(["type", "newPage", "event"]) Event onPageChange
     @Argument(["nowPage", "pageRecords", "event"]) Event onRefresh
     @Argument(["rowIndex", "rowData", "event"]) Event onRowClick

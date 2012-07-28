@@ -5,12 +5,13 @@ import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 import org.springframework.stereotype.Component
+import org.grails.plugins.omui.json.Function
 
 @Component("omSuggestion")
 class Suggestion extends ContainerWidget {
 
     Integer cacheSize
-    Mixed clientFormatter //Function
+    Function clientFormatter //Function
     Boolean crossDomain
     String dataSource
     Integer delay

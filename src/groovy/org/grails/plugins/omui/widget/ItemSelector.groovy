@@ -3,6 +3,7 @@ package org.grails.plugins.omui.widget
 import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
+import org.grails.plugins.omui.json.Function
 import org.grails.plugins.omui.json.Mixed
 import org.springframework.stereotype.Component
 
@@ -10,13 +11,13 @@ import org.springframework.stereotype.Component
 class ItemSelector extends ContainerWidget {
     Boolean autoSort
     String availableTitle
-    Mixed clientFormatter //Function
+    Function clientFormatter
     Mixed dataSource
-    String height
-    Mixed preProcess    //Function
+    Mixed height
+    Function preProcess
     String selectedTitle
     Mixed value
-    String width
+    Mixed width
 
     @Argument(["itemDatas", "event"]) Event onBeforeItemDeselect
     @Argument(["itemDatas", "event"]) Event onBeforeItemSelect

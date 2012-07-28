@@ -27,7 +27,7 @@ class Combo extends ContainerWidget {
     Boolean readOnly
     String value
     Mixed valueField
-    String width
+    Mixed width
 
     @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
     @Argument(["data", "textStatus", "event"]) Event onSuccess

@@ -8,20 +8,20 @@ import org.springframework.stereotype.Component
 class Tooltip extends SelectorWidget {
 
     Boolean anchor
-    Double anchorOffset
+    Mixed anchorOffset
     String contentEL
     Integer delay
-    Double height
+    Mixed height
     String html
     Boolean lazyLoad
-    Double maxHeight
-    Double maxWidth
-    Double minHeight
-    Double minWidth
+    Mixed maxHeight
+    Mixed maxWidth
+    Mixed minHeight
+    Mixed minWidth
     Mixed offset
     String region
     String showOn
     Boolean trackMouse
     String url
-    Double width
+    Mixed width
 }

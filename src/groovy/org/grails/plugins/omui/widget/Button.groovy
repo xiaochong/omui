@@ -13,7 +13,7 @@ class Button extends ContainerWidget {
     String disabled
     Mixed icons
     String label
-    Double width
+    Mixed width
 
     @Argument(['event']) Event onClick
 

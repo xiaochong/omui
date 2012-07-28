@@ -14,22 +14,22 @@ class FileUpload extends ContainerWidget {
     String buttonImg
     String fileDesc
     String fileExt
-    Double height
+    Mixed height
     String method
     Boolean multi
     Integer queueSizeLimit
     Boolean removeCompleted
     Integer sizeLimit
     String swf
-    Double width
+    Mixed width
 
     @Argument(['data', 'event']) Event onAllComplete
-    @Argument(['ID', 'fileObj', 'data', 'event']) Event onCancel
-    @Argument(['ID', 'fileObj', 'response', 'data', 'event']) Event onComplete
-    @Argument(['ID', 'fileObj', 'errorObj', 'event']) Event onError
-    @Argument(['ID', 'fileObj', 'data', 'event']) Event onProgress
+    @Argument(['id', 'fileObj', 'data', 'event']) Event onCancel
+    @Argument(['id', 'fileObj', 'response', 'data', 'event']) Event onComplete
+    @Argument(['id', 'fileObj', 'errorObj', 'event']) Event onError
+    @Argument(['id', 'fileObj', 'data', 'event']) Event onProgress
     @Argument(['queueSizeLimit', 'event']) Event onQueueFull
-    @Argument(['ID', 'fileObj', 'event']) Event onSelect
+    @Argument(['id', 'fileObj', 'event']) Event onSelect
 
     @Override
     String getContainerTag() {

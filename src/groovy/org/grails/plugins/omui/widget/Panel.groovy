@@ -3,6 +3,7 @@ package org.grails.plugins.omui.widget
 import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
+import org.grails.plugins.omui.json.Function
 import org.grails.plugins.omui.json.Mixed
 import org.springframework.stereotype.Component
 
@@ -16,7 +17,7 @@ class Panel extends ContainerWidget {
     Mixed height
     String iconCls
     String loadingMessage
-    Mixed preProcess //Function
+    Function preProcess
     String title
     Mixed tools
     String url
@@ -31,7 +32,7 @@ class Panel extends ContainerWidget {
     @Argument(["xmlHttpRequest", "textStatus", "errorThrown", "event"]) Event onError
     @Argument(["event"]) Event onExpand
     @Argument(["event"]) Event onOpen
-    @Argument(["data", "textStatus", "event"]) Event onSuccess
+    @Argument(["data", "textStatus", "xmlHttpRequest", "event"]) Event onSuccess
 
     @Override
     String getContainerTag() {
