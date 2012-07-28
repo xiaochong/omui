@@ -4,7 +4,9 @@ import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
+@Component("omAccordion")
 class Accordion extends ContainerWidget {
     Mixed active
     Boolean autoPlay
@@ -26,9 +28,5 @@ class Accordion extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "div"
-    }
-
-    String getWidgetName() {
-        return "accordion"
     }
 }

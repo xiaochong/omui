@@ -30,7 +30,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onLoadComplete
      */
     def tabs = { attrs, body ->
-        doTag("tabs", attrs, body)
+        doTag("omTabs", attrs, body)
     }
 
     /**
@@ -52,7 +52,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onCollapse
      */
     def accordion = { attrs, body ->
-        doTag("accordion", attrs, body)
+        doTag("omAccordion", attrs, body)
     }
 
     /**
@@ -77,7 +77,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onOpen
      */
     def dialog = { attrs, body ->
-        doTag("dialog",attrs, body)
+        doTag("omDialog", attrs, body)
     }
 
     /**
@@ -99,7 +99,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSelect
      */
     def calendar = { attrs, body ->
-        doTag("calendar",attrs, body)
+        doTag("omCalendar", attrs, body)
     }
 
     /**
@@ -129,7 +129,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onValueChange
      */
     def combo = { attrs, body ->
-        doTag("combo",attrs, body)
+        doTag("omCombo", attrs, body)
     }
 
     /**
@@ -143,7 +143,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBlur
      */
     def numberField = { attrs, body ->
-        doTag("numberField",attrs, body)
+        doTag("omNumberField", attrs, body)
     }
 
     /**
@@ -170,7 +170,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onKeyUp
      */
     def editor = { attrs, body ->
-        doTag("editor",attrs, body)
+        doTag("omEditor", attrs, body)
     }
 
     /**
@@ -196,7 +196,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuggesting
      */
     def suggestion = { attrs, body ->
-        doTag("suggestion",attrs, body)
+        doTag("omSuggestion", attrs, body)
     }
 
     /**
@@ -221,7 +221,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def itemSelector = { attrs, body ->
-        doTag("itemSelector",attrs, body)
+        doTag("omItemSelector", attrs, body)
     }
 
     /**
@@ -251,7 +251,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def panel = { attrs, body ->
-        doTag("panel",attrs, body)
+        doTag("omPanel", attrs, body)
     }
 
     /**
@@ -285,7 +285,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def grid = { attrs, body ->
-        doTag( "grid",attrs, body)
+        doTag("omGrid", attrs, body)
     }
 
     /**
@@ -314,7 +314,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSuccess
      */
     def tree = { attrs, body ->
-        doTag("tree",attrs, body)
+        doTag("omTree", attrs, body)
     }
 
     /**
@@ -334,7 +334,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onBeforeSlide
      */
     def slider = { attrs, body ->
-        doTag("slider",attrs, body)
+        doTag("omSlider", attrs, body)
     }
 
     /**
@@ -347,7 +347,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onSelect
      */
     def menu = { attrs, body ->
-        doTag( "menu",attrs, body)
+        doTag("omMenu", attrs, body)
     }
 
     /**
@@ -359,7 +359,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr onChange
      */
     def progressbar = { attrs, body ->
-        doTag("progressbar",attrs, body)
+        doTag("omProgressbar", attrs, body)
     }
 
     /**
@@ -374,7 +374,7 @@ class OmuiTagLib extends BaseTagLib {
     def button = { attrs, body ->
         attrs.tag = attrs.tag ?: 'button'
         if (attrs.tag == 'input' && !attrs.type) attrs.type = 'button'
-        doTag('button', attrs, body)
+        doTag('omButton', attrs, body)
     }
 
     /**
@@ -401,7 +401,7 @@ class OmuiTagLib extends BaseTagLib {
      */
     def tooltip = { attrs, body ->
         if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:tooltip>!")
-        doTag('tooltip', attrs, body)
+        doTag('omTooltip', attrs, body)
     }
 
     /**
@@ -432,7 +432,7 @@ class OmuiTagLib extends BaseTagLib {
     def fileUpload = { attrs, body ->
         attrs.type = "file"
         attrs.swf = attrs.swf ?: resource(plugin: 'omui', dir: 'operamasks-ui/swf', file: 'om-fileupload.swf')
-        doTag("fileUpload", attrs, body)
+        doTag("omFileUpload", attrs, body)
     }
 
     /**

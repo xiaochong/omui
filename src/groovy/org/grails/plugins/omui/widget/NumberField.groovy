@@ -1,11 +1,11 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
-import org.grails.plugins.omui.json.Event
-
 import org.grails.plugins.omui.ContainerWidget
+import org.grails.plugins.omui.json.Event
+import org.springframework.stereotype.Component
 
+@Component("omNumberField")
 class NumberField extends ContainerWidget {
     Boolean allowDecimals
     Boolean allowNegative
@@ -18,10 +18,5 @@ class NumberField extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "input"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "numberField"
     }
 }

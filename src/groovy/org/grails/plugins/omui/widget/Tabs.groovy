@@ -1,12 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
-import org.grails.plugins.omui.ContainerWidget
-
+@Component("omTabs")
 class Tabs extends ContainerWidget {
     Mixed active
     Boolean autoPlay
@@ -31,11 +31,6 @@ class Tabs extends ContainerWidget {
     @Argument(["n", "event"]) Event onClose
     @Argument(["event"]) Event onCloseAll
     @Argument(["tabId", "event"]) Event onLoadComplete
-
-    @Override
-    String getWidgetName() {
-        return 'tabs'
-    }
 
     @Override
     String getContainerTag() {

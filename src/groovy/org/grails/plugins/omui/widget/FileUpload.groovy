@@ -1,11 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
-import org.grails.plugins.omui.ContainerWidget
+import org.springframework.stereotype.Component
 
+@Component("omFileUpload")
 class FileUpload extends ContainerWidget {
     String action
     Mixed actionData
@@ -33,9 +34,5 @@ class FileUpload extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "input"
-    }
-
-    String getWidgetName() {
-        return 'fileUpload'
     }
 }

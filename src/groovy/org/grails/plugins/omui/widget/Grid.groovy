@@ -4,7 +4,9 @@ import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
+@Component("omGrid")
 class Grid extends ContainerWidget {
     Boolean autoFit
     Mixed colModel
@@ -41,10 +43,5 @@ class Grid extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "table"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "grid"
     }
 }

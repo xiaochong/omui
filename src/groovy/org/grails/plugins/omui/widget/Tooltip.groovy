@@ -1,10 +1,10 @@
 package org.grails.plugins.omui.widget
 
-import org.grails.plugins.omui.json.Mixed
-
 import org.grails.plugins.omui.SelectorWidget
+import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
-
+@Component("omTooltip")
 class Tooltip extends SelectorWidget {
 
     Boolean anchor
@@ -24,8 +24,4 @@ class Tooltip extends SelectorWidget {
     Boolean trackMouse
     String url
     Double width
-
-    String getWidgetName() {
-        return 'tooltip'
-    }
 }

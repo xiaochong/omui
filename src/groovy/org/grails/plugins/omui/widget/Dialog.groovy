@@ -1,11 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
-import org.grails.plugins.omui.ContainerWidget
+import org.springframework.stereotype.Component
 
+@Component("omDialog")
 class Dialog extends ContainerWidget {
     Boolean autoOpen
     Mixed buttons
@@ -30,10 +31,5 @@ class Dialog extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "div"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "dialog"
     }
 }

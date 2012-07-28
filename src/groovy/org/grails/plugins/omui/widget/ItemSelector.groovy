@@ -1,11 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
-import org.grails.plugins.omui.ContainerWidget
+import org.springframework.stereotype.Component
 
+@Component('omItemSelector')
 class ItemSelector extends ContainerWidget {
     Boolean autoSort
     String availableTitle
@@ -27,10 +28,5 @@ class ItemSelector extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "div"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "itemSelector"
     }
 }

@@ -1,12 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
-import org.grails.plugins.omui.ContainerWidget
-
+@Component("omEditor")
 class Editor extends ContainerWidget {
     Mixed allowImageType
     Boolean basicEntities
@@ -32,10 +32,5 @@ class Editor extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "textarea"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "editor"
     }
 }

@@ -4,7 +4,9 @@ import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
+@Component('omTree')
 class Tree extends ContainerWidget {
     Boolean cascadeCheck
     Mixed dataSource
@@ -32,10 +34,5 @@ class Tree extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "ul"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "tree"
     }
 }

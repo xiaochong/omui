@@ -1,11 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
-import org.grails.plugins.omui.ContainerWidget
+import org.springframework.stereotype.Component
 
+@Component("omCombo")
 class Combo extends ContainerWidget {
     Boolean autoFilter
     Mixed dataSource
@@ -35,10 +36,5 @@ class Combo extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "input"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "combo"
     }
 }

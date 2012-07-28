@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 public interface RenderContext {
+
+    String getWidget()
+
     HttpServletRequest getRequest()
 
     HttpServletResponse getResponse()

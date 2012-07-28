@@ -1,10 +1,11 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
-import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.ContainerWidget
+import org.grails.plugins.omui.json.Event
+import org.springframework.stereotype.Component
 
+@Component('omMenu')
 class Menu extends ContainerWidget {
     Boolean contextMenu
     String dataSource
@@ -16,10 +17,5 @@ class Menu extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "div"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "menu"
     }
 }

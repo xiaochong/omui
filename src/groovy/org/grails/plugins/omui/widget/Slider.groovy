@@ -1,12 +1,12 @@
 package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
-
+import org.grails.plugins.omui.ContainerWidget
 import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
+import org.springframework.stereotype.Component
 
-import org.grails.plugins.omui.ContainerWidget
-
+@Component("omSlider")
 class Slider extends ContainerWidget {
     String activeNavCls
     Integer animSpeed
@@ -25,10 +25,5 @@ class Slider extends ContainerWidget {
     @Override
     String getContainerTag() {
         return "div"
-    }
-
-    @Override
-    String getWidgetName() {
-        return "slider"
     }
 }

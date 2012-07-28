@@ -7,7 +7,7 @@ class OmuiGrailsPlugin {
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-        "grails-app/views/error.gsp"
+            "grails-app/views/error.gsp"
     ]
 
     // TODO Fill in these fields
@@ -43,7 +43,8 @@ Brief summary/description of the plugin.
     }
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
+        xmlns context: "http://www.springframework.org/schema/context"
+        context."component-scan"("base-package": "org.grails.plugins.omui.widget")
     }
 
     def doWithDynamicMethods = { ctx ->
