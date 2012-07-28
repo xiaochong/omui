@@ -463,7 +463,7 @@ class OmuiTagLib extends BaseTagLib {
      */
     def validate = { attrs, body ->
         if (!attrs.selector) throwTagError("[selector] attribute must be specified to for <om:validate>!")
-        doTag(attrs, body, 'validate', '', [selector: attrs.selector, noOmPrefix: true])
+        doTag('validate', attrs, body)
     }
 
     /**
