@@ -2,6 +2,7 @@ package org.grails.plugins.omui.widget
 
 import org.grails.plugins.omui.Argument
 import org.grails.plugins.omui.SelectorWidget
+import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Mixed
 import org.springframework.stereotype.Component
 
@@ -13,8 +14,8 @@ class Droppable extends SelectorWidget {
     Boolean greedy
     String hoverClass
 
-    @Argument(['source', 'event']) onDragOut
-    @Argument(['source', 'event']) onDragOver
-    @Argument(['source', 'event']) onDragStart
-    @Argument(['source', 'event']) onDrop
+    @Argument(['source', 'event']) Event onDragOut
+    @Argument(['source', 'event']) Event onDragOver
+    @Argument(['source', 'event']) Event onDragStart
+    @Argument(['source', 'event']) Event onDrop
 }
