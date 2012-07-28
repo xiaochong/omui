@@ -515,5 +515,14 @@ class OmuiTagLib extends BaseTagLib {
         doTag('omScrollbar', attrs, body)
     }
 
+    /**
+     * @attr id
+     *
+     * @attr width
+     * @attr btns
+     */
+    def buttonbar = { attrs, body ->
+        doTag('omButtonbar', attrs, body)
+    }
 
 }
