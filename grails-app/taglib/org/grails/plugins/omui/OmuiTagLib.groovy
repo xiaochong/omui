@@ -369,6 +369,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr icons
      * @attr label
      * @attr width
+     * @attr height
      * @attr onClick
      */
     def button = { attrs, body ->

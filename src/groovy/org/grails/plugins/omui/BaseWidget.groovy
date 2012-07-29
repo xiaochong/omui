@@ -12,6 +12,7 @@ import org.grails.plugins.omui.json.Event
 import org.grails.plugins.omui.json.Function
 import org.grails.plugins.omui.json.Mixed
 import org.grails.plugins.omui.serializer.JsDateFormatSerializer
+import org.grails.plugins.omui.serializer.StreamCharBufferFormatSerializer
 import org.springframework.beans.BeanWrapperImpl
 
 abstract class BaseWidget implements Widget {
@@ -26,6 +27,7 @@ abstract class BaseWidget implements Widget {
 
     static {
         serializeConfig.put(Date.class, new JsDateFormatSerializer())
+        serializeConfig.put(StreamCharBuffer.class, new StreamCharBufferFormatSerializer())
     }
 
     void init(RenderContext context) {
