@@ -22,6 +22,7 @@ class Panel extends ContainerWidget {
     Mixed tools
     String url
     Mixed width
+    Boolean _helpMsg
 
     @Argument(["event"]) Event onBeforeClose
     @Argument(["event"]) Event onBeforeCollapse

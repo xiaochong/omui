@@ -239,6 +239,7 @@ class OmuiTagLib extends BaseTagLib {
      * @attr tools
      * @attr url
      * @attr width
+     * @attr _helpMsg
      * @attr onBeforeClose
      * @attr onBeforeCollapse
      * @attr onBeforeExpand
