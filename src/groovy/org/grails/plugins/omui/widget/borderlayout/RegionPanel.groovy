@@ -15,6 +15,9 @@ class RegionPanel extends BaseWidget {
     Boolean collapsible
     Boolean closable
     Mixed height
+    Mixed width
+    Boolean header
+    Boolean expandToBottom
 
     Event onCollapse
     Event onBeforeCollapse
@@ -30,6 +33,14 @@ class RegionPanel extends BaseWidget {
         init(context)
         def request = context.request
         request.borderLayout << this
-        context.out << """<div id="${this.id}">${context.body()}</div>"""
+        def remainAttributes = context.attrs.findAll {
+            if ('selector' == it.key) return false
+            if ('class' == it.key) return true
+            else return !this.metaClass.hasProperty(this, it.key.toString())
+        }
+        def outputAttributeContent = remainAttributes.collect {k, v ->
+            "$k=\"${v?.encodeAsHTML()}\""
+        }.join(' ')
+        context.out << """<div id="${this.id}" ${outputAttributeContent}>${context.body()}</div>"""
     }
 }

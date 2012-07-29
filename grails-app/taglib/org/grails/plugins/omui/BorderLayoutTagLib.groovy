@@ -75,6 +75,7 @@ class BorderLayoutTagLib extends BaseTagLib {
      * @attr closable
      * @attr height
      * @attr width
+     * @attr expandToBottom
      *
      * @attr onCollapse
      * @attr onBeforeCollapse

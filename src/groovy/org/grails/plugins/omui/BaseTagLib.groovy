@@ -75,5 +75,9 @@ protected abstract class BaseTagLib implements InitializingBean, ApplicationCont
         def getR() {
             return source.r
         }
+
+        def getG() {
+            return source.g
+        }
     }
 }

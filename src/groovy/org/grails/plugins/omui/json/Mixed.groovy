@@ -13,13 +13,13 @@ class Mixed implements JSONAware {
 
     String toJSONString() {
         if (value instanceof StreamCharBuffer) value = value.toString()
-        if (value && value instanceof String) {
+        if (value != null && value instanceof String) {
             String trimValue = value.trim()
             if (trimValue == 'true' || trimValue == 'false' || trimValue.isNumber() || trimValue.startsWith('function') ||
                     trimValue.startsWith('{') || trimValue.startsWith('[')) {
                 value = new JSONContent(trimValue)
             }
         }
-        return value ? JSON.toJSONString(value) : ''
+        return value != null ? JSON.toJSONString(value) : ''
     }
 }

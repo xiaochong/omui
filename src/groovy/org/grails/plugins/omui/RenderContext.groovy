@@ -21,4 +21,6 @@ public interface RenderContext {
     Writer getOut()
 
     def getR()
+
+    def getG()
 }
