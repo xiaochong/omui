@@ -1,7 +1,6 @@
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
-grails.project.target.level = 1.5
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 grails.project.dependency.resolution = {
@@ -27,11 +26,11 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.5'
-        runtime 'com.alibaba:fastjson:1.1.22'
+        runtime 'com.alibaba:fastjson:1.1.23'
     }
 
     plugins {
-        build(":tomcat:$grailsVersion", ":release:1.0.0", ":svn:1.0.1") {
+        build(":tomcat:$grailsVersion", ":release:2.0.4") {
             export = false
         }
     }
